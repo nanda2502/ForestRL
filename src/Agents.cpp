@@ -1,5 +1,6 @@
 #include "Agents.hpp"
 #include "Types.hpp"
+#include "Trees.hpp"
 #include "Utils.hpp"
 
 #include <algorithm>
@@ -7,14 +8,78 @@
 #include <cstddef>
 #include <random>
 #include <vector>
+#include <iostream>
 
+extern int debug;
 
-Agents::Agents(const Params& params) {
-    initialize(params);
+Agents::Agents(const Params& params, const std::vector<Tree>& trees) {
+    repertoires = Repertoires(params.num_agents, std::vector<std::vector<size_t>>(params.num_trees, std::vector<size_t>(params.num_traits, 0)));
+    expectedValues = std::vector<strategyExpectedValues>(params.num_agents, strategyExpectedValues{0.5, 0.5});
+    lifetimes = std::vector<size_t>(params.num_agents);
+    chosenStrategy = std::vector<int>();
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    payoffs = generatePayoffs(params, gen);
+
+    initialize(params, trees);
 }
 
-void Agents::initialize(const Params& params) {
+/* std::vector<double> makeConstrainedDist(const Params& params) {
+    int inputnodes = params.num_traits - 2;
+    double startingValue = 1.112 - 0.217 * inputnodes + 0.016 * inputnodes * inputnodes;
+    constexpr double decay_rate = 0.5;
+    std::vector<double> dist(params.num_traits -1);
+    dist[0] = startingValue;
+    for (size_t i = 1; i < params.num_traits - 1; ++i) {
+        dist[i] = dist[i - 1] * decay_rate;
+    }
+    return dist;
+} */
 
+std::vector<double> makeConstrainedDist(const Params& params) {
+    return std::vector<double>(params.num_traits - 1, 0.5);
+}
+
+
+std::vector<double> makeFlatDist(const Params& params) {
+    return std::vector<double>(params.num_traits - 1, 1.0/(params.num_traits - 1));
+}
+
+size_t sampleLifetime(const Params& params, std::mt19937& gen) {
+    double mean = params.num_traits * (params.lifetime_scale * params.num_trees);
+
+    std::poisson_distribution<size_t> lifetime_dist(mean);
+
+    return lifetime_dist(gen);
+} 
+
+void Agents::initialize(const Params& params, const std::vector<Tree>& trees) { 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    for (size_t agent = 0; agent < params.num_agents; ++agent) {
+        lifetimes[agent] = sampleLifetime(params, gen);
+        for (size_t tree_idx = 0; tree_idx < params.num_trees; ++tree_idx) {
+            repertoires[agent][tree_idx][0] = 1;
+
+            auto tree = trees[tree_idx];
+            std::vector<double> traitDist;
+            if (tree[0][2] == 1) {
+                traitDist = makeFlatDist(params);
+            } else {
+                traitDist = makeConstrainedDist(params);
+            }
+            // loop over the traits, for each trait sample from the distribution. If the sample is smaller than the threshold, set the trait to 1
+            for (size_t trait = 1; trait < params.num_traits; ++trait) {
+                std::uniform_real_distribution<> dis(0, 1);
+                if (dis(gen) < traitDist[trait - 1]) {
+                    repertoires[agent][tree_idx][trait] = 1;
+                } else break;
+            }
+        }
+    }
 }
 
 std::vector<size_t> Agents::getUnknownTraits(size_t agentIndex, size_t treeIndex) {
@@ -41,7 +106,7 @@ Strategy sampleStrategy(const strategyExpectedValues& expectedValues, std::mt199
     return Proximal;
 }
 
-std::vector<size_t> Agents::sampleDemonstrators(size_t focalAgent, const Params& params, std::mt19937& gen) {
+std::vector<size_t> sampleDemonstrators(size_t focalAgent, const Params& params, std::mt19937& gen) {
     std::vector<size_t> demonstrator_indices;
     //sample params.num_demonstrators agents, but not the focal agent
     for (size_t i = 0; i < params.num_demonstrators; i++) {
@@ -93,17 +158,15 @@ std::vector<size_t> Agents::getUsefulDemonstrators(size_t focalAgent, size_t tre
     return usefulDemonstrators;
 }
 
-
-
 size_t Agents::learnPayoffBased(size_t treeIndex, const std::vector<size_t>& usefulTraits, std::mt19937& gen) {
     constexpr double SENSITIVITY = 5.0;
     std::vector<double> traitWeights(usefulTraits.size(), 0.0);
 
     double weightSum = 0.0;
-    for (size_t traitIndex : usefulTraits) {
-        size_t trait = usefulTraits[traitIndex];
-        traitWeights[traitIndex] = std::pow(payoffs[treeIndex][trait], SENSITIVITY);
-        weightSum += traitWeights[traitIndex];   
+    for (size_t i = 0; i < usefulTraits.size(); i++) {
+        size_t trait = usefulTraits[i];
+        traitWeights[i] = std::pow(payoffs[treeIndex][trait], SENSITIVITY);
+        weightSum += traitWeights[i];   
     }
     //normalize
     std::transform(traitWeights.begin(), traitWeights.end(), traitWeights.begin(), 
@@ -122,9 +185,11 @@ size_t Agents::learnProximal(size_t focalAgent, const std::vector<size_t>& usefu
     std::vector<size_t> sampledTraits(usefulDemonstrators.size());
     double weightSum = 0.0;
 
-    for (size_t demonstrator : usefulDemonstrators) {
-         const std::vector<size_t>& demoTraits = repertoires[demonstrator][treeIndex];
-        std::vector <size_t> newTraits;
+    for (size_t i = 0; i < usefulDemonstrators.size(); i++) {
+        size_t demonstrator = usefulDemonstrators[i];
+        const std::vector<size_t>& demoTraits = repertoires[demonstrator][treeIndex];
+        std::vector<size_t> newTraits;
+        
         for (size_t traitIndex = 0; traitIndex < demoTraits.size(); traitIndex++) {
             if (demoTraits[traitIndex] == 1 && repertoires[focalAgent][treeIndex][traitIndex] == 0) {
                 newTraits.emplace_back(traitIndex);
@@ -132,20 +197,26 @@ size_t Agents::learnProximal(size_t focalAgent, const std::vector<size_t>& usefu
         }
 
         if (!newTraits.empty()) {
-            demonstratorWeights[demonstrator] = std::pow(2.0, 1.0 - newTraits.size());
+            demonstratorWeights[i] = std::pow(2.0, 1.0 - newTraits.size());
             std::uniform_int_distribution<size_t> traitDist(0, newTraits.size() - 1);
-            sampledTraits[demonstrator] = newTraits[traitDist(gen)];
+            sampledTraits[i] = newTraits[traitDist(gen)];
         } else {
-            demonstratorWeights[demonstrator] = 0.0;
-            sampledTraits[demonstrator] = 0;
+            demonstratorWeights[i] = 0.0;
+            sampledTraits[i] = 0;
         }
-        weightSum += demonstratorWeights[demonstrator];        
+        weightSum += demonstratorWeights[i];        
     }
+
+    if (weightSum == 0.0) {
+        return 0;
+    }
+
     // normalize the weights
     std::transform(demonstratorWeights.begin(), demonstratorWeights.end(), demonstratorWeights.begin(),
         [weightSum](double weight) {
             return weight / weightSum;
         });
+    
     // sample a trait from the weighted distribution
     std::discrete_distribution<> distribution(demonstratorWeights.begin(), demonstratorWeights.end());
     size_t sampledDemonstratorIndex = distribution(gen);
@@ -156,8 +227,8 @@ bool Agents::isLearnable(size_t trait, size_t agentIndex, size_t treeIndex, cons
     const std::vector<size_t>& focalTraits = repertoires[agentIndex][treeIndex];
 
     for (size_t parent = 0; parent < tree[trait].size(); ++parent) {
-        if (tree[trait][parent] == 1) {  // Assuming adjacency matrix uses 1 for presence of an edge
-            if (focalTraits[parent] == 0) {  // Check if the parent trait is not learned
+        if (tree[trait][parent] == 1) {  
+            if (focalTraits[parent] == 0) {  
                 return false;
             }
         }
@@ -165,71 +236,104 @@ bool Agents::isLearnable(size_t trait, size_t agentIndex, size_t treeIndex, cons
     return true;
 }
 
-void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Strategy strategy, const Tree& tree, const Params& params) {
-
-    if (!chosenTrait == 0) {
+void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Strategy strategy, const Tree& tree, const Params& params, std::mt19937& gen) {
+    if(debug >= 1) std::cout << "Updating" << '\n';
+    if (!(chosenTrait == 0)) {
         //check if learnable
+        double feedback;
         if (isLearnable(chosenTrait, agentIndex, treeIndex, tree)) {
             repertoires[agentIndex][treeIndex][chosenTrait] = 1;
-            expectedValues[agentIndex].proximal =
-                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * 1.0; 
-
-            expectedValues[agentIndex].payoff = 
-                (1 - params.learning_rate) * expectedValues[agentIndex].payoff + params.learning_rate * 1.0; 
-
+            feedback = 1.0;
         } else {
-            expectedValues[agentIndex].proximal =
-                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * -1.0; 
-
-            expectedValues[agentIndex].payoff = 
-                (1 - params.learning_rate) * expectedValues[agentIndex].payoff + params.learning_rate * -1.0; 
+            feedback = -1.0;
         }
+        
+        if (strategy == Payoff) {
+            expectedValues[agentIndex].proximal =
+                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * feedback;
+            chosenStrategy.push_back(0);
+        } else if (strategy == Proximal) {
+            expectedValues[agentIndex].proximal =
+                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * feedback;
+            chosenStrategy.push_back(1);
+        } 
     }
 
     lifetimes[agentIndex] -= 1;
     if (lifetimes[agentIndex] == 0) {
+        if(debug >= 1) std::cout << "Agent reset" << '\n';
         //reset the agent's repertoire
         repertoires[agentIndex][treeIndex] = std::vector<size_t>(tree.size(), 0);
-        lifetimes[agentIndex] = sampleLifetime(params, agentIndex);
+        lifetimes[agentIndex] = sampleLifetime(params, gen);
     }
+    if(debug >= 1) std::cout << "Update done" << '\n';
 }
 
-// This function samples a single individual for learning. 
-// Whether learning is done socially or by innovation depends 
-// on the innovation rate Parameter.
 void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
     std::random_device rd;
     std::mt19937 gen(rd());
 
     auto treeIndex = sampleIndex(params.num_trees, gen);
     auto agentIndex = sampleIndex(params.num_agents, gen);
-    auto traits = getUnknownTraits(agentIndex, treeIndex);
+    
     size_t chosenTrait;    
     std::uniform_real_distribution<> learn_dis(0, 1);
     Strategy strategy;
 
-    if (learn_dis(gen) < params.innovation_rate) {
-        // innovation
-        strategy = Individual;
-        chosenTrait = sampleIndex(traits.size(), gen);
+    auto unknownTraits = getUnknownTraits(agentIndex, treeIndex);
+    if(debug >= 1) std::cout << "Unknown traits: " << unknownTraits.size() << '\n';
+    if (unknownTraits.empty()) {
+        strategy = None;
+        chosenTrait = 0;
     } else {
-        // social learning
-
-        strategy = sampleStrategy(expectedValues[agentIndex], gen); 
-
-        auto demonstrators = sampleDemonstrators(agentIndex, params, gen);
-        
-        if (strategy == Payoff) {
-            // payoff learning
-            auto usefulTraits = sampleTraits(agentIndex, treeIndex, demonstrators);
-            chosenTrait = learnPayoffBased(treeIndex, usefulTraits, gen);
+        if (learn_dis(gen) < params.innovation_rate) {
+            // innovation
+            if(debug >= 1) std::cout << "Innovation" << '\n';
+            strategy = Individual;
+            chosenTrait = unknownTraits[sampleIndex(unknownTraits.size(), gen)];
+            if(debug >= 1) std::cout << "Innovation done" << '\n';
         } else {
-            // proximal learning
-            auto usefulDemonstrators = getUsefulDemonstrators(agentIndex, treeIndex, demonstrators);
-            chosenTrait = learnProximal(agentIndex, usefulDemonstrators, treeIndex, gen);
+            // social learning
+            if(debug >= 1) std::cout << "Social learning" << '\n';
+            strategy = sampleStrategy(expectedValues[agentIndex], gen); 
+            if(debug >= 1) std::cout << "Strategy: " << strategy << '\n';
+            auto demonstrators = sampleDemonstrators(agentIndex, params, gen);
+            if(debug >= 1) std::cout << "Demonstrators: " << demonstrators.size() << '\n';
+            if (strategy == Payoff) {
+                // payoff learning
+                if(debug >= 1) std::cout << "Payoff learning" << '\n';
+                auto usefulTraits = sampleTraits(agentIndex, treeIndex, demonstrators);
+                if(debug >= 1) std::cout << "Useful traits: " << usefulTraits.size() << '\n';
+                
+                if (usefulTraits.empty()) {
+                    strategy = None;
+                    chosenTrait = 0;
+                } else {
+                    chosenTrait = learnPayoffBased(treeIndex, usefulTraits, gen);
+                }
+                if(debug >= 1) std::cout << "Payoff learning done" << '\n';
+            } else {
+                // proximal learning
+                if(debug >= 1) std::cout << "Proximal learning" << '\n';
+                auto usefulDemonstrators = getUsefulDemonstrators(agentIndex, treeIndex, demonstrators);
+                if(debug >= 1) std::cout << "Useful demonstrators: " << usefulDemonstrators.size() << '\n';
+                if (usefulDemonstrators.empty()) {
+                    strategy = None;
+                    chosenTrait = 0;
+                } else {
+                    chosenTrait = learnProximal(agentIndex, usefulDemonstrators, treeIndex, gen);
+                }
+                if(debug >= 1) std::cout << "Proximal learning done" << '\n';
+            }
+            
         }
-        
     }
-    
-    update(chosenTrait, agentIndex, treeIndex, strategy, trees[treeIndex], params);
+    update(chosenTrait, agentIndex, treeIndex, strategy, trees[treeIndex], params, gen);
+}
+
+double Agents::computeProportion() {
+    int numElements = chosenStrategy.size() * 0.05;
+    auto start = chosenStrategy.end() - numElements;
+    double sum = std::accumulate(start, chosenStrategy.end(), 0);
+    return sum / numElements;
 }
