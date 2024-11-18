@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <vector>
-#include <execution>
 
 int debug = 0;
 

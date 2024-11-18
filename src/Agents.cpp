@@ -14,7 +14,7 @@ extern int debug;
 
 Agents::Agents(const Params& params, const std::vector<Tree>& trees) {
     repertoires = Repertoires(params.num_agents, std::vector<std::vector<size_t>>(params.num_trees, std::vector<size_t>(params.num_traits, 0)));
-    expectedValues = std::vector<strategyExpectedValues>(params.num_agents, strategyExpectedValues{0.5, 0.5});
+    expectedValues = std::vector<strategyExpectedValues>(params.num_agents, strategyExpectedValues{1.0, 1.0});
     lifetimes = std::vector<size_t>(params.num_agents);
     chosenStrategy = std::vector<int>();
 
@@ -50,7 +50,7 @@ std::vector<double> makeFlatDist(const Params& params) {
 }
 
 size_t sampleLifetime(const Params& params, std::mt19937& gen) {
-    double mean =  params.lifetime_scale * params.num_trees * params.num_traits;
+    double mean =  params.lifetime_scale * params.num_trees;
 
     std::poisson_distribution<size_t> lifetime_dist(mean);
 
@@ -134,7 +134,7 @@ std::vector<size_t> sampleDemonstrators(size_t focalAgent, const Params& params,
     return demonstrator_indices;
 }
 
-std::vector<size_t> Agents::sampleTraits(size_t focalAgent, size_t treeIndex, const std::vector<size_t>& demonstrators) {
+std::vector<size_t> Agents::sampleDemoTraits(size_t focalAgent, size_t treeIndex, const std::vector<size_t>& demonstrators) {
     std::vector<size_t> usefulTraits;
     const std::vector<size_t>& focalTraits = repertoires[focalAgent][treeIndex];
     if (debug >= 1) std::cout << "Focal traits:\n" ;
@@ -273,18 +273,17 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
         if (isLearnable(chosenTrait, agentIndex, treeIndex, tree)) {
             repertoires[agentIndex][treeIndex][chosenTrait] = 1;
             feedback = payoffs[treeIndex][chosenTrait] / payoffTotal;
-            //feedback = 1.0;
         } else {
             feedback = -1.0;
         }
         if (debug >= 1) std::cout << "Feedback: " << feedback << '\n';
         if (strategy == Payoff) {
-            expectedValues[agentIndex].payoff =
-                (1 - params.learning_rate) * expectedValues[agentIndex].payoff + params.learning_rate * feedback;
+            double predictionError = feedback - expectedValues[agentIndex].payoff;
+            expectedValues[agentIndex].payoff += params.learning_rate * predictionError;
             chosenStrategy.push_back(Payoff);
         } else if (strategy == Proximal) {
-            expectedValues[agentIndex].proximal =
-                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * feedback;
+            double predictionError = feedback - expectedValues[agentIndex].proximal;
+            expectedValues[agentIndex].proximal += params.learning_rate * predictionError;
             chosenStrategy.push_back(Proximal);
         } 
     }
@@ -342,7 +341,7 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
             if (strategy == Payoff) {
                 // payoff learning
                 if(debug >= 1) std::cout << "Strategy: Payoff" << '\n';
-                auto usefulTraits = sampleTraits(agentIndex, treeIndex, demonstrators);
+                auto usefulTraits = sampleDemoTraits(agentIndex, treeIndex, demonstrators);
 
                 if (usefulTraits.empty()) {
                     strategy = None;

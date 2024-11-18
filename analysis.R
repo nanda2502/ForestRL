@@ -2,6 +2,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(dplyr)
 library(ggplot2)
+library(scales)
 
 
 data <- read.csv("output.csv")
@@ -26,7 +27,7 @@ ggplot(data, aes(x = TimeBin, y = PropPayoff, color = factor(PropConstrained))) 
     breaks = seq(0, max(data$TimeBin), by = 500000)
   ) +
   scale_y_continuous(
-    name = "Proportion Payoff-based Learning",
+    name = "Prop. Payoff",
     limits = c(0, 1),
     breaks = seq(0, 1, by = 0.2)
   ) +
