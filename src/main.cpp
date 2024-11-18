@@ -42,16 +42,6 @@ int main() {
     
     std::vector<Result> results(propConstrainedValues.size());
     
-    std::transform(
-        std::execution::par,
-        propConstrainedValues.begin(),
-        propConstrainedValues.end(),
-        results.begin(),
-        [&params](double prop) {
-            return runSimulation(params, prop);
-        }
-    );
-
     #pragma omp parallel for
     for (size_t i = 0; i < propConstrainedValues.size(); ++i) {
         double prop = propConstrainedValues[i];
