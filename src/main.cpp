@@ -16,6 +16,7 @@ Result runSimulation(const Params& params, double propConstrained) {
     
     for (size_t i = 0; i < params.num_iterations; ++i) {
         agents.learn(params, trees);
+        //if (i > 1e6) debug = 1;
     }
 
     result.timeSeriesData.reserve(agents.chosenStrategy.size());
@@ -50,6 +51,12 @@ int main() {
             return runSimulation(params, prop);
         }
     );
+
+    #pragma omp parallel for
+    for (size_t i = 0; i < propConstrainedValues.size(); ++i) {
+        double prop = propConstrainedValues[i];
+        results[i] = runSimulation(params, prop);
+    }
 
     writeResultsToCsv(results, "../output.csv");
     std::cout << "Simulation complete" << '\n';

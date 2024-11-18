@@ -36,17 +36,18 @@ std::vector<Tree> initializeTrees(const Params& params, double propConstrained) 
     return trees;
 }
 
-std::vector<std::vector<double>> generatePayoffs(const Params& params, std::mt19937& gen) {
+std::pair<std::vector<std::vector<double>>, double> generatePayoffs(const Params& params, std::mt19937& gen) {
     constexpr double mean = 1.0;
    
     size_t non_root_count = params.num_traits - 1; 
 
     double spacing = (2.0 * mean) / (non_root_count + 1);
     std::vector<double> non_root_payoffs(non_root_count);
-
+    double total = 0.0;
     // Generate equally spaced payoffs for non-root traits
     for (size_t i = 0; i < non_root_count; ++i) {
         non_root_payoffs[i] = spacing * (i + 1);
+        total += non_root_payoffs[i];
     }
 
     // Generate params.num_trees random shuffles of these payoffs
@@ -60,5 +61,5 @@ std::vector<std::vector<double>> generatePayoffs(const Params& params, std::mt19
         }
 
     }
-    return payoffs;
+    return {payoffs, total};
 }

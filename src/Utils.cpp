@@ -17,6 +17,7 @@ void writeResultsToCsv(const std::vector<Result>& results, const std::string& fi
     outFile << "PropConstrained,Timestep,Strategy\n";
     
     for (const auto& result : results) {
+        
         for (const auto& timeStep : result.timeSeriesData) {
             outFile << timeStep.propConstrained << "," 
                     << timeStep.timestep << ","

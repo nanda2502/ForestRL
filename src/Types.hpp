@@ -17,11 +17,11 @@ struct Params {
     size_t num_trees = 100;
     size_t num_demonstrators = 10;
     size_t num_traits = 8;
-    size_t num_iterations = 6000000;
-    double lifetime_scale = 0.5;
-    double learning_rate = 0.03;
-    double temperature = 0.5;
-    double innovation_rate = 0.01;
+    size_t num_iterations = 3e7;
+    double lifetime_scale = 1.0;
+    double learning_rate = 0.1;
+    double temperature = 0.4;
+    double innovation_rate = 0.05;
 };
 
 enum Strategy {

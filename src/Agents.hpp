@@ -12,12 +12,14 @@ public:
     void learn(const Params& params, const std::vector<Tree>& trees);
     double computeProportion();
     std::vector<int> chosenStrategy; // chosenStrategy[timestep]
+    int sumNone = 0;
 
 private:
     Repertoires repertoires; // repertoires[agent][tree][trait]
     std::vector<strategyExpectedValues> expectedValues; // expectedValues[agent] 
     std::vector<size_t> lifetimes; // lifetimes[agent]
     std::vector<std::vector<double>> payoffs; // payoffs[tree][trait]
+    double payoffTotal;
 
     void initialize(const Params& params, const std::vector<Tree>& trees);
     std::vector<size_t> getUnknownTraits(size_t agentIndex, size_t treeIndex);

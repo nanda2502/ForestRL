@@ -2,6 +2,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(dplyr)
 library(ggplot2)
+library(scales)
 
 
 data <- read.csv("output.csv")
@@ -10,7 +11,6 @@ plot(data$PropConstrained, data$PropPayoff, xlab="Proportion of Constrained Tree
 
 
 data <- read.csv("output.csv") %>%
-  filter(PropConstrained %in% c(0.0, 0.25, 0.50, 0.75, 1.0)) %>%
   mutate(TimeBin = floor(Timestep / 20000) * 20000) %>%
   group_by(PropConstrained, TimeBin) %>%
   summarise(
@@ -24,10 +24,10 @@ ggplot(data, aes(x = TimeBin, y = PropPayoff, color = factor(PropConstrained))) 
   scale_x_continuous(
     name = "Time Step",
     labels = label_number(scale = 1e-6, suffix = "M"), # Convert to millions
-    breaks = seq(0, max(data$TimeBin), by = 150000)
+    breaks = seq(0, max(data$TimeBin), by = 500000)
   ) +
   scale_y_continuous(
-    name = "Proportion Payoff-based Learning",
+    name = "Prop. Payoff",
     limits = c(0, 1),
     breaks = seq(0, 1, by = 0.2)
   ) +
@@ -38,3 +38,5 @@ ggplot(data, aes(x = TimeBin, y = PropPayoff, color = factor(PropConstrained))) 
     text = element_text(size = 12),
     axis.text = element_text(size = 10)
   )
+
+
