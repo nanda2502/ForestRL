@@ -8,6 +8,6 @@
 
 std::vector<Tree> initializeTrees(const Params& params, double propConstrained);
 
-std::vector<std::vector<double>> generatePayoffs(const Params& params, std::mt19937& gen);
+std::pair<std::vector<std::vector<double>>, double> generatePayoffs(const Params& params, std::mt19937& gen);
 
 #endif // TREES_HPP

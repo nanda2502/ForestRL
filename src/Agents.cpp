@@ -14,7 +14,7 @@
 extern int debug;
 
 size_t sampleLifetime(const Params& params, std::mt19937& gen) {
-    double mean =  params.num_traits * params.lifetime_scale * params.num_trees;
+    double mean = params.lifetime_scale * params.num_trees;
 
     std::poisson_distribution<size_t> lifetime_dist(mean);
 
@@ -30,7 +30,10 @@ Agents::Agents(const Params& params, const std::vector<Tree>& trees) {
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    payoffs = generatePayoffs(params, gen);
+    auto payoffPair = generatePayoffs(params, gen);
+
+    payoffs = payoffPair.first;
+    totalPayoff = payoffPair.second;
 
     initialize(params, trees);
 }
@@ -230,9 +233,6 @@ size_t Agents::learnSimilarity(size_t focalAgent, const std::vector<size_t>& use
     return sampledTraits[sampledDemonstratorIndex];
 }
 
-
-
-
 size_t Agents::learnProximal(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen) {
     std::vector<double> demonstratorWeights(usefulDemonstrators.size());
     std::vector<size_t> sampledTraits(usefulDemonstrators.size());
@@ -280,7 +280,7 @@ bool Agents::isLearnable(size_t trait, size_t agentIndex, size_t treeIndex, cons
     const std::vector<size_t>& focalTraits = repertoires[agentIndex][treeIndex];
 
     for (size_t parent = 0; parent < tree[trait].size(); ++parent) {
-        if (tree[trait][parent] == 1) {  
+        if (tree[parent][trait] == 1) {  
             if (focalTraits[parent] == 0) {  
                 return false;
             }
@@ -317,6 +317,7 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
         if(debug >= 1) std::cout << "Agent reset" << '\n';
         //reset the agent's repertoire
         repertoires[agentIndex][treeIndex] = std::vector<size_t>(tree.size(), 0);
+        repertoires[agentIndex][treeIndex][0] = 1;
         lifetimes[agentIndex] = sampleLifetime(params, gen);
     }
     if(debug >= 1) std::cout << "Update done" << '\n';

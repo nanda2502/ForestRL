@@ -18,6 +18,7 @@ private:
     std::vector<strategyExpectedValues> expectedValues; // expectedValues[agent] 
     std::vector<size_t> lifetimes; // lifetimes[agent]
     std::vector<std::vector<double>> payoffs; // payoffs[tree][trait]
+    double totalPayoff;
 
     void initialize(const Params& params, const std::vector<Tree>& trees);
     std::vector<size_t> getUnknownTraits(size_t agentIndex, size_t treeIndex);
