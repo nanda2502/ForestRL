@@ -25,6 +25,7 @@ private:
     std::vector<size_t> sampleTraits(size_t focalAgent, size_t treeIndex, const std::vector<size_t>& demonstrators);
     size_t learnPayoffBased(size_t treeIndex, const std::vector<size_t>& usefulTraits, std::mt19937& gen);
     size_t learnProximal(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen);
+    size_t learnSimilarity(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen);
     void update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Strategy strategy, const Tree& tree, const Params& params, std::mt19937& gen);
     bool isLearnable(size_t trait, size_t agentIndex, size_t treeIndex, const Tree& tree);
 };

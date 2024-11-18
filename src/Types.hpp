@@ -8,7 +8,7 @@ using Repertoires = std::vector<std::vector<std::vector<size_t>>>; // repertoire
 using Tree = std::vector<std::vector<size_t>>;
 
 struct strategyExpectedValues {
-    double payoff;
+    double similarity;
     double proximal;
 };
 
@@ -16,16 +16,16 @@ struct Params {
     size_t num_agents = 1000;
     size_t num_trees = 100;
     size_t num_demonstrators = 10;
-    size_t num_traits = 8;
-    size_t num_iterations = 6000000;
+    size_t num_traits = 30;
+    size_t num_iterations = 4000000;
     double lifetime_scale = 0.5;
     double learning_rate = 0.03;
     double temperature = 0.5;
-    double innovation_rate = 0.01;
+    double innovation_rate = 0.02;
 };
 
 enum Strategy {
-    Payoff,
+    Similarity,
     Proximal,
     Individual,
     None

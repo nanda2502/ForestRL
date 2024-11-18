@@ -6,11 +6,20 @@
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <numeric>
 #include <random>
 #include <vector>
 #include <iostream>
 
 extern int debug;
+
+size_t sampleLifetime(const Params& params, std::mt19937& gen) {
+    double mean =  params.num_traits * params.lifetime_scale * params.num_trees;
+
+    std::poisson_distribution<size_t> lifetime_dist(mean);
+
+    return lifetime_dist(gen);
+} 
 
 Agents::Agents(const Params& params, const std::vector<Tree>& trees) {
     repertoires = Repertoires(params.num_agents, std::vector<std::vector<size_t>>(params.num_trees, std::vector<size_t>(params.num_traits, 0)));
@@ -47,13 +56,9 @@ std::vector<double> makeFlatDist(const Params& params) {
     return std::vector<double>(params.num_traits - 1, 1.0/(params.num_traits - 1));
 }
 
-size_t sampleLifetime(const Params& params, std::mt19937& gen) {
-    double mean =  (params.lifetime_scale * params.num_trees);
-
-    std::poisson_distribution<size_t> lifetime_dist(mean);
-
-    return lifetime_dist(gen);
-} 
+std::vector<double> makeForkedDist(const Params& params) {
+    return std::vector<double>(params.num_traits - 1, 0.5);
+}
 
 void Agents::initialize(const Params& params, const std::vector<Tree>& trees) { 
     std::random_device rd;
@@ -95,15 +100,15 @@ std::vector<size_t> Agents::getUnknownTraits(size_t agentIndex, size_t treeIndex
 
 Strategy sampleStrategy(const strategyExpectedValues& expectedValues, const Params& params, std::mt19937& gen) {
     // Adjusting for temperature in softmax
-    double scaledPayoff = expectedValues.payoff / params.temperature;
+    double scaledSimilarity = expectedValues.similarity / params.temperature;
     double scaledProximal = expectedValues.proximal / params.temperature;
     
-    double total = exp(scaledPayoff) + exp(scaledProximal);
-    double payoff_prob = exp(scaledPayoff) / total;
+    double total = exp(scaledSimilarity) + exp(scaledProximal);
+    double similarity_prob = exp(scaledSimilarity) / total;
     std::uniform_real_distribution<> dis(0, 1);
     
-    if (dis(gen) < payoff_prob) {
-        return Payoff;
+    if (dis(gen) < similarity_prob) {
+        return Similarity;
     } 
     
     return Proximal;
@@ -183,6 +188,51 @@ size_t Agents::learnPayoffBased(size_t treeIndex, const std::vector<size_t>& use
     return usefulTraits[sampledTraitIndex];
 }
 
+
+size_t Agents::learnSimilarity(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen) {
+    std::vector<double> demonstratorWeights(usefulDemonstrators.size());
+    std::vector<size_t> sampledTraits(usefulDemonstrators.size());
+    double weightSum = 0.0;
+    // if focal agent and demonstrator have the same trait, add to the weight
+    for (size_t i = 0; i < usefulDemonstrators.size(); i++) {
+        size_t demonstrator = usefulDemonstrators[i];
+        const std::vector<size_t>& demoTraits = repertoires[demonstrator][treeIndex];
+        std::vector<size_t> newTraits;
+        for (size_t traitIndex = 0; traitIndex < demoTraits.size(); traitIndex++) {
+            if (demoTraits[traitIndex] == 1 && repertoires[focalAgent][treeIndex][traitIndex] == 0) {
+                newTraits.emplace_back(traitIndex);
+            }
+        }
+        if (!newTraits.empty()) {
+            demonstratorWeights[i] = std::inner_product(demoTraits.begin(), demoTraits.end(), repertoires[focalAgent][treeIndex].begin(), 0.0);
+            std::uniform_int_distribution<size_t> traitDist(0, newTraits.size() - 1);
+            sampledTraits[i] = newTraits[traitDist(gen)];
+        } else {
+            demonstratorWeights[i] = 0.0;
+            sampledTraits[i] = 0;
+        }
+        weightSum += demonstratorWeights[i];
+    }
+
+    if (weightSum == 0.0) {
+        return 0;
+    }
+
+    // normalize the weights
+    std::transform(demonstratorWeights.begin(), demonstratorWeights.end(), demonstratorWeights.begin(),
+        [weightSum](double weight) {
+            return weight / weightSum;
+        });
+
+    // sample a trait from the weighted distribution
+    std::discrete_distribution<> distribution(demonstratorWeights.begin(), demonstratorWeights.end());
+    size_t sampledDemonstratorIndex = distribution(gen);
+    return sampledTraits[sampledDemonstratorIndex];
+}
+
+
+
+
 size_t Agents::learnProximal(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen) {
     std::vector<double> demonstratorWeights(usefulDemonstrators.size());
     std::vector<size_t> sampledTraits(usefulDemonstrators.size());
@@ -251,9 +301,9 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
             feedback = -1.0;
         }
         
-        if (strategy == Payoff) {
-            expectedValues[agentIndex].proximal =
-                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * feedback;
+        if (strategy == Similarity) {
+            expectedValues[agentIndex].similarity =
+                (1 - params.learning_rate) * expectedValues[agentIndex].similarity + params.learning_rate * feedback;
             chosenStrategy.push_back(0);
         } else if (strategy == Proximal) {
             expectedValues[agentIndex].proximal =
@@ -302,19 +352,19 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
             if(debug >= 1) std::cout << "Strategy: " << strategy << '\n';
             auto demonstrators = sampleDemonstrators(agentIndex, params, gen);
             if(debug >= 1) std::cout << "Demonstrators: " << demonstrators.size() << '\n';
-            if (strategy == Payoff) {
-                // payoff learning
-                if(debug >= 1) std::cout << "Payoff learning" << '\n';
-                auto usefulTraits = sampleTraits(agentIndex, treeIndex, demonstrators);
-                if(debug >= 1) std::cout << "Useful traits: " << usefulTraits.size() << '\n';
+            if (strategy == Similarity) {
+                // similarity learning
+                if(debug >= 1) std::cout << "Similarity learning" << '\n';
+                auto usefulDemonstrators = getUsefulDemonstrators(agentIndex, treeIndex, demonstrators);
+                if(debug >= 1) std::cout << "Useful demonstrators: " << usefulDemonstrators.size() << '\n';
                 
-                if (usefulTraits.empty()) {
+                if (usefulDemonstrators.empty()) {
                     strategy = None;
                     chosenTrait = 0;
                 } else {
-                    chosenTrait = learnPayoffBased(treeIndex, usefulTraits, gen);
+                    chosenTrait = learnSimilarity(agentIndex, usefulDemonstrators, treeIndex, gen);
                 }
-                if(debug >= 1) std::cout << "Payoff learning done" << '\n';
+                if(debug >= 1) std::cout << "Similarity learning done" << '\n';
             } else {
                 // proximal learning
                 if(debug >= 1) std::cout << "Proximal learning" << '\n';
