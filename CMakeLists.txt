@@ -10,4 +10,4 @@ set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "C:/msys64/mingw64")
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-add_executable(yam ${SOURCES})
+add_executable(runforest ${SOURCES})

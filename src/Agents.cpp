@@ -48,7 +48,7 @@ std::vector<double> makeFlatDist(const Params& params) {
 }
 
 size_t sampleLifetime(const Params& params, std::mt19937& gen) {
-    double mean = params.num_traits * (params.lifetime_scale * params.num_trees);
+    double mean =  (params.lifetime_scale * params.num_trees);
 
     std::poisson_distribution<size_t> lifetime_dist(mean);
 
@@ -93,10 +93,13 @@ std::vector<size_t> Agents::getUnknownTraits(size_t agentIndex, size_t treeIndex
     return unknown_traits;
 }    
 
-Strategy sampleStrategy(const strategyExpectedValues& expectedValues, std::mt19937& gen) {
-    //softmax the two values and then use them as probabilities to sample a strategy
-    double total = exp(expectedValues.payoff) + exp(expectedValues.proximal);
-    double payoff_prob = exp(expectedValues.payoff) / total;
+Strategy sampleStrategy(const strategyExpectedValues& expectedValues, const Params& params, std::mt19937& gen) {
+    // Adjusting for temperature in softmax
+    double scaledPayoff = expectedValues.payoff / params.temperature;
+    double scaledProximal = expectedValues.proximal / params.temperature;
+    
+    double total = exp(scaledPayoff) + exp(scaledProximal);
+    double payoff_prob = exp(scaledPayoff) / total;
     std::uniform_real_distribution<> dis(0, 1);
     
     if (dis(gen) < payoff_prob) {
@@ -243,7 +246,7 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
         double feedback;
         if (isLearnable(chosenTrait, agentIndex, treeIndex, tree)) {
             repertoires[agentIndex][treeIndex][chosenTrait] = 1;
-            feedback = 1.0;
+            feedback = payoffs[treeIndex][chosenTrait];
         } else {
             feedback = -1.0;
         }
@@ -295,7 +298,7 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
         } else {
             // social learning
             if(debug >= 1) std::cout << "Social learning" << '\n';
-            strategy = sampleStrategy(expectedValues[agentIndex], gen); 
+            strategy = sampleStrategy(expectedValues[agentIndex], params, gen); 
             if(debug >= 1) std::cout << "Strategy: " << strategy << '\n';
             auto demonstrators = sampleDemonstrators(agentIndex, params, gen);
             if(debug >= 1) std::cout << "Demonstrators: " << demonstrators.size() << '\n';
