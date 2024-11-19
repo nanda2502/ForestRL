@@ -289,6 +289,7 @@ bool Agents::isLearnable(size_t trait, size_t agentIndex, size_t treeIndex, cons
     return true;
 }
 
+
 void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Strategy strategy, const Tree& tree, const Params& params, std::mt19937& gen) {
     if(debug >= 1) std::cout << "Updating" << '\n';
     if (!(chosenTrait == 0)) {
@@ -302,13 +303,13 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
         }
         
         if (strategy == Similarity) {
-            expectedValues[agentIndex].similarity =
-                (1 - params.learning_rate) * expectedValues[agentIndex].similarity + params.learning_rate * feedback;
-            chosenStrategy.push_back(0);
+            double predictionError = feedback - expectedValues[agentIndex].similarity;
+            expectedValues[agentIndex].similarity += params.learning_rate * predictionError;
+            chosenStrategy.push_back(Similarity);
         } else if (strategy == Proximal) {
-            expectedValues[agentIndex].proximal =
-                (1 - params.learning_rate) * expectedValues[agentIndex].proximal + params.learning_rate * feedback;
-            chosenStrategy.push_back(1);
+            double predictionError = feedback - expectedValues[agentIndex].proximal;
+            expectedValues[agentIndex].proximal += params.learning_rate * predictionError;
+            chosenStrategy.push_back(Proximal);
         } 
     }
 

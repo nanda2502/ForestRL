@@ -24,10 +24,10 @@ ggplot(data, aes(x = TimeBin, y = PropPayoff, color = factor(PropConstrained))) 
   scale_x_continuous(
     name = "Time Step",
     labels = label_number(scale = 1e-6, suffix = "M"), # Convert to millions
-    breaks = seq(0, max(data$TimeBin), by = 150000)
+    breaks = seq(0, max(data$TimeBin), by = 500000)
   ) +
   scale_y_continuous(
-    name = "Proportion Payoff-based Learning",
+    name = "Prop. Payoff",
     limits = c(0, 1),
     breaks = seq(0, 1, by = 0.2)
   ) +
