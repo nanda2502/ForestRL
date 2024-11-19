@@ -1,0 +1,3142 @@
+Flat tree
+Unknown traits:
+6 7 8 10 11 12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.934911
+Proximal: 0.93962
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 4
+Number of new traits: 5
+Number of new traits: 4
+Number of new traits: 2
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 5
+Number of new traits: 3
+Number of new traits: 2
+Demonstrator weights:
+0.0434783 0.0217391 0.0434783 0.173913 0.0869565 0.173913 0.173913 0.0217391 0.0869565 0.173913
+Sampled traits:
+14 7 12 11 15 11 12 10 7 10 
+Sampled trait15
+Updating
+Feedback: 1.375
+Agent 455 updated
+Flat tree
+Unknown traits:
+5 6 9 12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.821304
+Proximal: 0.899086
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 1
+Demonstrator weights:
+0.216216 0.108108 0.216216 0.027027 0.216216 0.216216
+Sampled traits:
+12 9 5 12 9 6
+Sampled trait9
+Updating
+Feedback: 0.125
+Agent 786 updated
+Flat tree
+No unknown traits
+Updating
+Agent 814 updated
+Flat tree
+Unknown traits:
+2 7 9 10 13 14
+Social learning
+Sampling strategy
+Payoff: 0.897172
+Proximal: 0.805587
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 0 1 0 0 1 1 0 0 1
+Useful traits:
+2 2 2 9 2 2 10
+Payoffs for traits:
+0.25 0.25 0.25 0.375 0.25 0.25 0.125
+Trait weights:
+0.0792079 0.0792079 0.0792079 0.601485 0.0792079 0.0792079 0.00247525
+Sampled trait: 2
+Updating
+Feedback: 0.25
+Agent 198 updated
+Flat tree
+Unknown traits:
+7 9 10 
+Social learning
+Sampling strategy
+Payoff: 0.972933
+Proximal: 1.01722
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Demonstrator weights:
+0.16 0.16 0.08 0.04 0.08 0.16 0.16 0.16
+Sampled traits:
+9 9 10 7 9 10 9 9
+Sampled trait9
+Updating
+Feedback: 1.25
+Agent 981 updated
+Flat tree
+Unknown traits:
+4 7 8 10 11 12 15
+Social learning
+Sampling strategy
+Payoff: 0.810494
+Proximal: 0.782645
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 0 1 0 0 0 1 1 0
+Useful traits:
+4 4 4 4 4 4 4 7 4 4
+Payoffs for traits:
+1 1 1 1 1 1 1 1.5 1 1
+Trait weights:
+0.0602637 0.0602637 0.0602637 0.0602637 0.0602637 0.0602637 0.0602637 0.457627 0.0602637 0.0602637
+Sampled trait: 4
+Updating
+Feedback: 1
+Agent 811 updated
+Flat tree
+Unknown traits:
+4 6 9 10 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.997499
+Proximal: 0.836516
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 0 1 1 0 0 0 1 0 0 0
+Useful traits:
+6 6 4 4 6 4 15 9 10
+Payoffs for traits:
+0.5 0.5 0.25 0.25 0.5 0.25 1.125 0.75 1.5
+Trait weights:
+0.00321179 0.00321179 0.000100369 0.000100369 0.00321179 0.000100369 0.185208 0.0243896 0.780466
+Sampled trait: 10
+Updating
+Feedback: 1.5
+Agent 278 updated
+Flat tree
+Unknown traits:
+3 5 6 8 10 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.884424
+Proximal: 0.848411
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 6
+Number of new traits: 1
+Number of new traits: 5
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 8
+Number of new traits: 8
+Demonstrator weights:
+0.00677966 0.216949 0.0135593 0.216949 0.108475 0.108475 0.108475 0.216949 0.00169492 0.00169492
+Sampled traits:
+6 6 15 3 6 6 6 6 6 10
+Sampled trait6
+Updating
+Feedback: 1
+Agent 126 updated
+Flat tree
+Unknown traits:
+3 6 11 14 15
+Social learning
+Sampling strategy
+Payoff: 0.834532
+Proximal: 0.75894
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 1 0 1 1 1 1 0 1 1 0 0
+Useful traits:
+3 14 14 15 3
+Payoffs for traits:
+0.25 0.875 0.875 0.125 0.25
+Trait weights:
+0.000950147 0.499035 0.499035 2.96921e-05 0.000950147
+Sampled trait: 14
+Updating
+Feedback: 0.875
+Agent 96 updated
+Flat tree
+Unknown traits:
+4 6 8 9 10 11 14 15
+Social learning
+Sampling strategy
+Payoff: 1.08071
+Proximal: 0.950605
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 0 1 0 0 0 0 1 1 0 0
+Useful traits:
+8 6 4 8 8 4 6
+Payoffs for traits:
+0.875 0.5 0.25 0.875 0.875 0.25 0.5
+Trait weights:
+0.319932 0.0194925 0.000609141 0.319932 0.319932 0.000609141 0.0194925
+Sampled trait: 8
+Updating
+Feedback: 0.875
+Agent 571 updated
+Flat tree
+Unknown traits:
+5 7 10 13
+Social learning
+Sampling strategy
+Payoff: 0.858483
+Proximal: 0.796853
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 1 0 1 1 0 1 1 0 1 1
+Useful traits:
+13 5 13 13 10 13 10 10
+Payoffs for traits:
+1.25 0.25 1.25 1.25 0.75 1.25 0.75 0.75
+Trait weights:
+0.236206 7.55858e-05 0.236206 0.236206 0.0183673 0.236206 0.0183673 0.0183673
+Sampled trait: 13
+Updating
+Feedback: 1.25
+Agent 727 updated
+Flat tree
+Unknown traits:
+3 4 5 6 7 8 9 10 11 12 13 15
+Social learning
+Sampling strategy
+Payoff: 0.961502
+Proximal: 0.946714
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0
+Useful traits:
+4 4 4 3 4 3 3 4 4 4
+Payoffs for traits:
+1.5 1.5 1.5 0.25 1.5 0.25 0.25 1.5 1.5 1.5
+Trait weights:
+0.142849 0.142849 0.142849 1.83705e-05 0.142849 1.83705e-05 1.83705e-05 0.142849 0.142849 0.142849 
+Sampled trait: 4
+Updating
+Feedback: 1.5
+Agent 414 updated
+Flat tree
+Unknown traits:
+2 3 10 13 15
+Social learning
+Sampling strategy
+Payoff: 0.887451
+Proximal: 0.87527
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 5
+Number of new traits: 2
+Number of new traits: 5
+Number of new traits: 3
+Demonstrator weights:
+0.08 0.32 0.32 0.02 0.16 0.02 0.08
+Sampled traits:
+2 15 15 10 2 13 2
+Sampled trait15
+Updating
+Feedback: 1
+Agent 980 updated
+Flat tree
+Unknown traits:
+5 6 13
+Social learning
+Sampling strategy
+Payoff: 0.976864
+Proximal: 0.980659
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1
+Useful traits:
+13 6 5 13 13 5 13 6
+Payoffs for traits:
+0.5 0.25 0.125 0.5 0.5 0.125 0.5 0.25
+Trait weights:
+0.246036 0.00768861 0.000240269 0.246036 0.246036 0.000240269 0.246036 0.00768861
+Sampled trait: 13
+Updating
+Feedback: 0.5
+Agent 400 updated
+Flat tree
+Unknown traits:
+3 7 8 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.896732
+Proximal: 0.866804
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 1 1 0 0 1 0 0 0 0 0 0
+Useful traits:
+3 3 3 3 3 3 3 3 3 3
+Payoffs for traits:
+1 1 1 1 1 1 1 1 1 1
+Trait weights:
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+Sampled trait: 3
+Updating
+Feedback: 1
+Agent 79 updated
+Flat tree
+Unknown traits:
+4 9 10 12 14
+Social learning
+Sampling strategy
+Payoff: 0.931411
+Proximal: 0.937481
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 1 1 0 0 1 0 1 0 1
+Useful traits:
+4 9 4 4 4 14 14 4 9
+Payoffs for traits:
+0.625 1 0.625 0.625 0.625 1.375 1.375 0.625 1
+Trait weights:
+0.00774929 0.0812571 0.00774929 0.00774929 0.00774929 0.39937 0.39937 0.00774929 0.0812571
+Sampled trait: 14
+Updating
+Feedback: 1.375
+Agent 978 updated
+Flat tree
+No unknown traits
+Updating
+Agent 561 updated
+Flat tree
+Unknown traits:
+1 5 6 10 11 12 13 14 15 
+Social learning
+Sampling strategy
+Payoff: 0.85132
+Proximal: 0.787253
+Strategy: Payoff
+Focal traits:
+1 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0
+Useful traits:
+1 1 1 1 1 1 1 1 1
+Payoffs for traits:
+0.375 0.375 0.375 0.375 0.375 0.375 0.375 0.375 0.375
+Trait weights:
+0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111
+Sampled trait: 1
+Updating
+Feedback: 0.375
+Agent 901 updated
+Flat tree
+Unknown traits:
+3 4 14
+Social learning
+Sampling strategy
+Payoff: 0.874936
+Proximal: 0.871649
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 1
+Useful traits:
+3 3 3 14
+Payoffs for traits:
+0.125 0.125 0.125 0.625
+Trait weights:
+0.000319693 0.000319693 0.000319693 0.999041
+Sampled trait: 14
+Updating
+Feedback: 0.625
+Agent 895 updated
+Flat tree
+Unknown traits:
+6 9 11 14
+Social learning
+Sampling strategy
+Payoff: 0.895808
+Proximal: 0.847116
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 0 1 1 0 1 0 1 1 0 1
+Useful traits:
+9 6 6 9 9 9 9 9
+Payoffs for traits:
+0.875 0.5 0.5 0.875 0.875 0.875 0.875 0.875 
+Trait weights:
+0.163349 0.00995238 0.00995238 0.163349 0.163349 0.163349 0.163349 0.163349
+Sampled trait: 9
+Updating
+Feedback: 0.875
+Agent 823 updated
+Flat tree
+Unknown traits:
+7 12 14
+Social learning
+Sampling strategy
+Payoff: 0.852505
+Proximal: 0.81137
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 0 1 1 1 1 0 1 0 1
+Useful traits:
+7 7 14
+Payoffs for traits:
+0.5 0.5 0.875
+Trait weights:
+0.0543092 0.0543092 0.891382
+Sampled trait: 14
+Updating
+Feedback: 0.875
+Agent 55 updated
+Flat tree
+Unknown traits:
+4 11 15
+Social learning
+Sampling strategy
+Payoff: 0.954922
+Proximal: 0.863328
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 0
+Useful traits:
+11 4 11 15
+Payoffs for traits:
+0.625 0.25 0.625 0.375
+Trait weights:
+0.478927 0.00490421 0.478927 0.0372414
+Sampled trait: 11
+Updating
+Feedback: 0.625
+Agent 298 updated
+Flat tree
+Unknown traits:
+3 5 8 10 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.887016
+Proximal: 0.823065
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 0 
+Useful traits:
+8 5 3 5 5 13 3 5 3
+Payoffs for traits:
+0.75 0.5 0.25 0.5 0.5 0.625 0.25 0.5 0.25
+Trait weights:
+0.515206 0.067846 0.00212019 0.067846 0.067846 0.20705 0.00212019 0.067846 0.00212019
+Sampled trait: 8
+Updating
+Feedback: 0.75
+Agent 677 updated
+Flat tree
+No unknown traits
+Updating
+Agent 844 updated
+Flat tree
+Unknown traits:
+4 7 9 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.948357
+Proximal: 0.892275
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 1 0 1 1 1 0 0 0
+Useful traits:
+4 4 4 4 15 15 7 7
+Payoffs for traits:
+0.125 0.125 0.125 0.125 1 1 0.5 0.5
+Trait weights:
+1.47955e-05 1.47955e-05 1.47955e-05 1.47955e-05 0.48482 0.48482 0.0151506 0.0151506
+Sampled trait: 15
+Updating
+Feedback: 1
+Agent 598 updated
+Flat tree
+Unknown traits:
+4 5 6 7 10 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.0593
+Proximal: 0.957131
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 0 0 1 1 0 1 1 0 0 0
+Useful traits:
+4 4 13 4 4 5 5 4 4
+Payoffs for traits:
+0.5 0.5 1.25 0.5 0.5 0.25 0.25 0.5 0.5 
+Trait weights:
+0.00964146 0.00964146 0.941549 0.00964146 0.00964146 0.000301296 0.000301296 0.00964146 0.00964146
+Sampled trait: 13
+Updating
+Feedback: 1.25
+Agent 449 updated
+Flat tree
+Unknown traits:
+5 6 11 14
+Social learning
+Sampling strategy
+Payoff: 0.969528
+Proximal: 0.963069
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 0 1 1 1 1 0 1 1 0 1
+Useful traits:
+5 6 5 5 5 6
+Payoffs for traits:
+0.375 0.25 0.375 0.375 0.375 0.25
+Trait weights:
+0.234556 0.030888 0.234556 0.234556 0.234556 0.030888
+Sampled trait: 5
+Updating
+Feedback: 0.375
+Agent 353 updated
+Flat tree
+Unknown traits:
+4 7 8 9
+Social learning
+Sampling strategy
+Payoff: 0.845908
+Proximal: 0.835908
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 0 0 1 1 1 1 1 1
+Useful traits:
+4 4 4 7
+Payoffs for traits:
+0.125 0.125 0.125 0.875
+Trait weights:
+5.94884e-05 5.94884e-05 5.94884e-05 0.999822
+Sampled trait: 7
+Updating
+Feedback: 0.875
+Agent 941 updated
+Flat tree
+Unknown traits:
+5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.89173
+Proximal: 0.889214
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 5
+Number of new traits: 10
+Number of new traits: 9
+Number of new traits: 9
+Number of new traits: 10
+Number of new traits: 11
+Number of new traits: 10
+Number of new traits: 2
+Number of new traits: 7
+Number of new traits: 4
+Demonstrator weights:
+0.0870748 0.00272109 0.00544218 0.00544218 0.00272109 0.00136054 0.00272109 0.696599 0.0217687 0.17415
+Sampled traits:
+8 13 11 7 11 13 7 9 13 8
+Sampled trait9
+Updating
+Feedback: 1.5
+Agent 935 updated
+Flat tree
+Unknown traits:
+5
+Social learning
+Sampling strategy
+Payoff: 0.896518
+Proximal: 0.834493
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1
+Useful traits:
+
+Updating
+Agent 576 updated
+Flat tree
+Unknown traits:
+2 4 5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.914066
+Proximal: 0.855005
+Strategy: Payoff
+Focal traits:
+1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+Useful traits:
+4 2 4 9 2 2 4 4 4 4
+Payoffs for traits:
+1.125 0.25 1.125 1.5 0.25 0.25 1.125 1.125 1.125 1.125 
+Trait weights:
+0.0978893 5.30485e-05 0.0978893 0.412505 5.30485e-05 5.30485e-05 0.0978893 0.0978893 0.0978893 0.0978893
+Sampled trait: 9
+Updating
+Feedback: 1.5
+Agent 435 updated
+Flat tree
+Unknown traits:
+2 13 14
+Social learning
+Sampling strategy
+Payoff: 0.828947
+Proximal: 0.794249
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 1 1 1 1 1 1 0 0 1
+Useful traits:
+14 2 2 2
+Payoffs for traits:
+0.125 0.25 0.25 0.25
+Trait weights:
+0.0103093 0.329897 0.329897 0.329897
+Sampled trait: 2
+Updating
+Feedback: 0.25
+Agent 580 updated
+Flat tree
+Unknown traits:
+3 10 11 14 15
+Social learning
+Sampling strategy
+Payoff: 0.875823
+Proximal: 0.900074
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 4
+Demonstrator weights:
+0.0869565 0.347826 0.347826 0.173913 0.0434783
+Sampled traits:
+3 14 15 3 11
+Sampled trait15
+Updating
+Feedback: 0.5
+Agent 587 updated
+Flat tree
+Unknown traits:
+13 14 
+Social learning
+Sampling strategy
+Payoff: 0.832524
+Proximal: 0.84571
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Demonstrator weights:
+0.333333 0.333333 0.333333
+Sampled traits:
+13 14 13
+Sampled trait14
+Updating
+Feedback: 0.25
+Agent 989 updated
+Flat tree
+Unknown traits:
+3 4 5 8 10 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.884424
+Proximal: 0.852959
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 0 1 1 0 1 0 1 0 0 0 0
+Useful traits:
+10 8 3 8 3 3 8 4
+Payoffs for traits:
+1.625 0.625 0.25 0.625 0.25 0.25 0.625 0.5
+Trait weights:
+0.972511 0.00818517 8.38161e-05 0.00818517 8.38161e-05 8.38161e-05 0.00818517 0.00268212 
+Sampled trait: 10
+Updating
+Feedback: 1.625
+Agent 126 updated
+Flat tree
+Unknown traits:
+12
+Social learning
+Sampling strategy
+Payoff: 0.980453
+Proximal: 0.859151
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1
+Useful traits:
+12
+Payoffs for traits:
+0.125
+Trait weights:
+1
+Sampled trait: 12
+Updating
+Feedback: 0.125
+Agent 893 updated
+Flat tree
+Unknown traits:
+4 7 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.80534
+Proximal: 0.792468
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 1 1 1 1 1 0 0 0
+Useful traits:
+13 4 14
+Payoffs for traits:
+0.625 0.25 1.125
+Trait weights:
+0.0502363 0.00051442 0.949249
+Sampled trait: 13
+Updating
+Feedback: 0.625
+Agent 657 updated
+Flat tree
+Unknown traits:
+2 4 5 6 10 11 12 13 14 
+Social learning
+Sampling strategy
+Payoff: 0.988316
+Proximal: 0.960035
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 5
+Number of new traits: 3
+Number of new traits: 5
+Number of new traits: 3
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 5
+Number of new traits: 9
+Number of new traits: 9
+Demonstrator weights:
+0.0432432 0.172973 0.0432432 0.172973 0.172973 0.345946 0.0432432 0.0027027 0.0027027
+Sampled traits:
+5 12 10 6 10 10 5 14 11
+Sampled trait10
+Updating
+Feedback: 1.75
+Agent 629 updated
+Flat tree
+No unknown traits
+Updating
+Agent 355 updated
+Flat tree
+Unknown traits:
+9 13 15
+Social learning
+Sampling strategy
+Payoff: 0.904761
+Proximal: 0.79971
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 0
+Useful traits:
+13 13 9 9 9
+Payoffs for traits:
+0.5 0.5 0.375 0.375 0.375
+Trait weights:
+0.368743 0.368743 0.0875045 0.0875045 0.0875045
+Sampled trait: 13
+Updating
+Feedback: 0.5
+Agent 227 updated
+Flat tree
+Unknown traits:
+4 6 7 8 11 13 14 15
+Innovation
+Innovation done
+Updating
+Feedback: 0.75
+Agent 445 updated
+Flat tree
+Unknown traits:
+11
+Social learning
+Sampling strategy
+Payoff: 0.736974
+Proximal: 0.729649
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1
+Useful traits:
+11 11
+Payoffs for traits:
+0.125 0.125
+Trait weights:
+0.5 0.5
+Sampled trait: 11
+Updating
+Feedback: 0.125
+Agent 710 updated
+Flat tree
+Unknown traits:
+8 9
+Social learning
+Sampling strategy
+Payoff: 0.9
+Proximal: 0.794579
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1
+Useful traits:
+8 8
+Payoffs for traits:
+0.375 0.375
+Trait weights:
+0.5 0.5
+Sampled trait: 8
+Updating
+Feedback: 0.375
+Agent 946 updated
+Flat tree
+Unknown traits:
+3 7 8 9 10 11 12 13 14 15 
+Social learning
+Sampling strategy
+Payoff: 0.812846
+Proximal: 0.843417
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 1 1 0 0 0 0 0 0 0 0 0
+Useful traits:
+7 7 7 7 9 3 7 7 3 3
+Payoffs for traits:
+1.75 1.75 1.75 1.75 0.625 0.25 1.75 1.75 0.25 0.25
+Trait weights:
+0.1665 0.1665 0.1665 0.1665 0.000967443 9.90661e-06 0.1665 0.1665 9.90661e-06 9.90661e-06
+Sampled trait: 7
+Updating
+Feedback: 1.75
+Agent 803 updated
+Flat tree
+Unknown traits:
+3 4 7 8 11 12 13
+Innovation
+Innovation done
+Updating
+Feedback: 1
+Agent 966 updated
+Flat tree
+Unknown traits:
+2 3 4 5 6 8 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.13731
+Proximal: 0.970523
+Strategy: Payoff
+Focal traits:
+1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 
+Useful traits:
+3 3 3 3 2 3 3 2 3 3
+Payoffs for traits:
+1.25 1.25 1.25 1.25 0.5 1.25 1.25 0.5 1.25 1.25
+Trait weights:
+0.124681 0.124681 0.124681 0.124681 0.00127673 0.124681 0.124681 0.00127673 0.124681 0.124681
+Sampled trait: 3
+Updating
+Feedback: 1.25
+Agent 288 updated
+Flat tree
+Unknown traits:
+12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.950291
+Proximal: 0.931549
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0
+Useful traits:
+13 12 12 12
+Payoffs for traits:
+0.5 0.625 0.625 0.625
+Trait weights:
+0.098471 0.30051 0.30051 0.30051
+Sampled trait: 12
+Updating
+Feedback: 0.625
+Agent 795 updated
+Flat tree
+Unknown traits:
+2 7 9 13 14
+Social learning
+Sampling strategy
+Payoff: 1.00555
+Proximal: 0.940459
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 0 1 0 1 1 1 0 0 1
+Useful traits:
+7 7 7 7 7 2 7 7 7 7 
+Payoffs for traits:
+1.25 1.25 1.25 1.25 1.25 0.25 1.25 1.25 1.25 1.25
+Trait weights:
+0.111107 0.111107 0.111107 0.111107 0.111107 3.55543e-05 0.111107 0.111107 0.111107 0.111107
+Sampled trait: 7
+Updating
+Feedback: 1.25
+Agent 757 updated
+Flat tree
+Unknown traits:
+3 4 8 9 13
+Social learning
+Sampling strategy
+Payoff: 1.10827
+Proximal: 0.992336
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 1 1 1 0 0 1 1 1 0 1 1
+Useful traits:
+8 3 9 3 8 8 8
+Payoffs for traits:
+0.875 0.625 0.25 0.625 0.875 0.875 0.875
+Trait weights:
+0.228636 0.0425112 0.000435315 0.0425112 0.228636 0.228636 0.228636
+Sampled trait: 8
+Updating
+Feedback: 0.875
+Agent 39 updated
+Flat tree
+Unknown traits:
+3 5 8 11 12 13 14
+Social learning
+Sampling strategy
+Payoff: 0.928935
+Proximal: 0.851745
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 1 1 0 1 1 0 0 0 0 1
+Useful traits:
+11 8 3 3 14 13 8 8 14 3
+Payoffs for traits:
+0.75 0.625 0.25 0.25 1 0.875 0.625 0.625 1 0.25 
+Trait weights:
+0.0780801 0.0313787 0.000321317 0.000321317 0.329029 0.168762 0.0313787 0.0313787 0.329029 0.000321317
+Sampled trait: 14
+Updating
+Feedback: 1
+Agent 748 updated
+Flat tree
+Unknown traits:
+2 7 9 10 13
+Social learning
+Sampling strategy
+Payoff: 0.888401
+Proximal: 0.882231
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 1
+Demonstrator weights:
+0.0571429 0.114286 0.0285714 0.228571 0.228571 0.114286 0.228571
+Sampled traits:
+13 7 9 13 9 7 13
+Sampled trait13
+Updating
+Feedback: 0.5
+Agent 599 updated
+Flat tree
+Unknown traits:
+4 6 8 9 10 11 13 14
+Social learning
+Sampling strategy
+Payoff: 0.880746
+Proximal: 0.846978
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 0 1 0 0 0 0 1 0 0 1
+Useful traits:
+4 6 6 10 4 6 4 4 13
+Payoffs for traits:
+0.375 0.875 0.875 1.25 0.375 0.875 0.375 0.375 1.625
+Trait weights:
+0.000464906 0.0321551 0.0321551 0.191319 0.000464906 0.0321551 0.000464906 0.000464906 0.710356
+Sampled trait: 13
+Updating
+Feedback: 1.625
+Agent 626 updated
+Flat tree
+No unknown traits
+Updating
+Agent 827 updated
+Flat tree
+Unknown traits:
+2 11
+Social learning
+Sampling strategy
+Payoff: 1.00441
+Proximal: 0.870102
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1
+Useful traits:
+2 2
+Payoffs for traits:
+0.125 0.125
+Trait weights:
+0.5 0.5
+Sampled trait: 2
+Updating
+Feedback: 0.125
+Agent 323 updated
+Flat tree
+Unknown traits:
+4 6 8 14
+Social learning
+Sampling strategy
+Payoff: 0.797336
+Proximal: 0.760102
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 0 1 0 1 1 1 1 1 0 1
+Useful traits:
+8 8 6
+Payoffs for traits:
+0.375 0.375 0.25
+Trait weights:
+0.469112 0.469112 0.0617761
+Sampled trait: 8
+Updating
+Feedback: 0.375
+Agent 78 updated
+Flat tree
+Unknown traits:
+1 6 14 15
+Social learning
+Sampling strategy
+Payoff: 0.982376
+Proximal: 0.914809
+Strategy: Payoff
+Focal traits:
+1 0 1 1 1 1 0 1 1 1 1 1 1 1 0 0
+Useful traits:
+6 1 1 14 1 1 1 1 
+Payoffs for traits:
+0.75 0.25 0.25 1.375 0.25 0.25 0.25 0.25
+Trait weights:
+0.0460067 0.000189328 0.000189328 0.952857 0.000189328 0.000189328 0.000189328 0.000189328
+Sampled trait: 14
+Updating
+Feedback: 1.375
+Agent 801 updated
+Flat tree
+Unknown traits:
+5 7 9 12
+Social learning
+Sampling strategy
+Payoff: 0.840885
+Proximal: 0.873366
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 1 0 1 0 1 1 0 1 1 1
+Useful traits:
+5 5 5 5 12
+Payoffs for traits:
+0.375 0.375 0.375 0.375 0.5
+Trait weights:
+0.121743 0.121743 0.121743 0.121743 0.513026
+Sampled trait: 5
+Updating
+Feedback: 0.375
+Agent 451 updated
+Flat tree
+Unknown traits:
+4 5 7 9 10 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.854998
+Proximal: 0.767596
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 1 0 1 0 0 1 0 0 0 0
+Useful traits:
+7 5 7 7 5 4 7 7 4 7
+Payoffs for traits:
+0.875 0.75 0.875 0.875 0.75 0.375 0.875 0.875 0.375 0.875
+Trait weights:
+0.143797 0.0665298 0.143797 0.143797 0.0665298 0.00207906 0.143797 0.143797 0.00207906 0.143797
+Sampled trait: 7
+Updating
+Feedback: 0.875
+Agent 208 updated
+Flat tree
+Unknown traits:
+5 7 8 9 10
+Social learning
+Sampling strategy
+Payoff: 0.803959
+Proximal: 0.781683
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 4
+Number of new traits: 2
+Number of new traits: 1
+Demonstrator weights:
+0.0645161 0.258065 0.258065 0.0322581 0.129032 0.258065
+Sampled traits:
+7 8 7 8 8 9
+Sampled trait8
+Updating
+Feedback: 0.375
+Agent 883 updated
+Flat tree
+Unknown traits:
+7 9 11 12 15
+Social learning
+Sampling strategy
+Payoff: 0.907681
+Proximal: 0.830443
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 0 1 0 1 0 0 1 1 0
+Useful traits:
+7 7 7 11 7
+Payoffs for traits:
+0.5 0.5 0.5 0.125 0.5
+Trait weights:
+0.249939 0.249939 0.249939 0.000244081 0.249939
+Sampled trait: 7
+Updating
+Feedback: 0.5
+Agent 179 updated
+Flat tree
+Unknown traits:
+5 7 9 10 13 14
+Social learning
+Sampling strategy
+Payoff: 0.988852
+Proximal: 0.931823
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 1 0 1 0 0 1 1 0 0 1
+Useful traits:
+5 5 5 5 5 5 5 5 5
+Payoffs for traits:
+1.125 1.125 1.125 1.125 1.125 1.125 1.125 1.125 1.125 
+Trait weights:
+0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111
+Sampled trait: 5
+Updating
+Feedback: 1.125
+Agent 896 updated
+Flat tree
+Unknown traits:
+6 8 11 13 14 15
+Innovation
+Innovation done
+Updating
+Feedback: 0.75
+Agent 312 updated
+Flat tree
+No unknown traits
+Updating
+Agent 737 updated
+Flat tree
+Unknown traits:
+3 4 6 9 10 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.918149
+Proximal: 0.896068
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 1 0 1 1 0 0 1 1 0 0 0
+Useful traits:
+3 3 10 14 10 14 14 10 4
+Payoffs for traits:
+0.125 0.125 1 1.375 1 1.375 1.375 1 0.625
+Trait weights:
+1.71062e-06 1.71062e-06 0.0560535 0.275497 0.0560535 0.275497 0.275497 0.0560535 0.00534568
+Sampled trait: 10
+Updating
+Feedback: 1
+Agent 584 updated
+Flat tree
+Unknown traits:
+7 11 12 15
+Social learning
+Sampling strategy
+Payoff: 0.838162
+Proximal: 0.809228
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 1
+Demonstrator weights:
+0.307692 0.307692 0.0769231 0.307692
+Sampled traits:
+12 15 15 11
+Sampled trait15
+Updating
+Feedback: 0.5
+Agent 361 updated
+Flat tree
+Unknown traits:
+2 6 9 10 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.82388
+Proximal: 0.783115
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 0 1 1 0 0 1 1 0 0 0
+Useful traits:
+13 2 14 2 2 2 15 14 14 13
+Payoffs for traits:
+0.75 0.5 1.25 0.5 0.5 0.5 0.625 1.25 1.25 0.75
+Trait weights:
+0.0240912 0.00317251 0.309815 0.00317251 0.00317251 0.00317251 0.00968173 0.309815 0.309815 0.0240912
+Sampled trait: 14
+Updating
+Feedback: 1.25
+Agent 200 updated
+Flat tree
+Unknown traits:
+2 3 5 7 8 10 11 14
+Social learning
+Sampling strategy
+Payoff: 1.03894
+Proximal: 0.934693
+Strategy: Payoff
+Focal traits:
+1 1 0 0 1 0 1 0 0 1 0 0 1 1 0 1 
+Useful traits:
+3 3 2 3 3 3 8 3 3
+Payoffs for traits:
+1.125 1.125 0.25 1.125 1.125 1.125 0.875 1.125 1.125
+Trait weights:
+0.137265 0.137265 7.43871e-05 0.137265 0.137265 0.137265 0.0390695 0.137265 0.137265
+Sampled trait: 3
+Updating
+Feedback: 1.125
+Agent 433 updated
+Flat tree
+Unknown traits:
+3 8 9 10 13 14
+Social learning
+Sampling strategy
+Payoff: 0.912062
+Proximal: 0.904766
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 5
+Number of new traits: 3
+Number of new traits: 1
+Demonstrator weights:
+0.101266 0.101266 0.202532 0.101266 0.0253165 0.202532 0.0126582 0.0506329 0.202532
+Sampled traits:
+10 10 3 9 3 10 3 10 3
+Sampled trait3
+Updating
+Feedback: 0.875
+Agent 431 updated
+Flat tree
+Unknown traits:
+4 7 8 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.8324
+Proximal: 0.86878
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 6
+Number of new traits: 3
+Number of new traits: 4
+Number of new traits: 7
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 5
+Demonstrator weights:
+0.0253165 0.202532 0.101266 0.0126582 0.202532 0.405063 0.0506329
+Sampled traits:
+8 14 8 4 8 14 14
+Sampled trait14
+Updating
+Feedback: 1.125
+Agent 792 updated
+Flat tree
+Unknown traits:
+2 3 5 6 7 9 14 15
+Social learning
+Sampling strategy
+Payoff: 0.863929
+Proximal: 0.846849
+Strategy: Payoff
+Focal traits:
+1 1 0 0 1 0 0 0 1 0 1 1 1 1 0 0
+Useful traits:
+2 15 2 2 2 2 14 2 2 2
+Payoffs for traits:
+0.625 1.75 0.625 0.625 0.625 0.625 1.125 0.625 0.625 0.625
+Trait weights:
+0.00502514 0.864845 0.00502514 0.00502514 0.00502514 0.00502514 0.0949535 0.00502514 0.00502514 0.00502514
+Sampled trait: 14
+Updating
+Feedback: 1.125
+Agent 163 updated
+Flat tree
+Unknown traits:
+3 7 8 10 11 14
+Social learning
+Sampling strategy
+Payoff: 0.893071
+Proximal: 0.830913
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 1 1 0 0 1 0 0 1 1 0 1
+Useful traits:
+7 10 11 10 7 3 8 3
+Payoffs for traits:
+0.125 0.5 1.125 0.5 0.125 0.375 0.25 0.375
+Trait weights:
+1.62293e-05 0.0166188 0.958323 0.0166188 1.62293e-05 0.00394372 0.000519337 0.00394372
+Sampled trait: 11
+Updating
+Feedback: 1.125
+Agent 962 updated
+Flat tree
+Unknown traits:
+5 7 8 9 12 13 
+Social learning
+Sampling strategy
+Payoff: 0.900239
+Proximal: 0.847954
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 1 0 0 0 1 1 0 0 1 1
+Useful traits:
+8 7 5 5 8 5 9 5
+Payoffs for traits:
+0.875 0.25 0.375 0.375 0.875 0.375 0.125 0.375
+Trait weights:
+0.485485 0.000924348 0.00701927 0.00701927 0.485485 0.00701927 2.88859e-05 0.00701927
+Sampled trait: 8
+Updating
+Feedback: 0.875
+Agent 797 updated
+Flat tree
+Unknown traits:
+3 5 6 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.89729
+Proximal: 0.816757
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 0 1 1 1 1 0 1 0 0 0
+Useful traits:
+6 15 14 6 6 6
+Payoffs for traits:
+0.625 1 0.375 0.625 0.625 0.625
+Trait weights:
+0.0686647 0.720002 0.00533937 0.0686647 0.0686647 0.0686647
+Sampled trait: 6
+Updating
+Feedback: 0.625
+Agent 504 updated
+Flat tree
+Unknown traits:
+4 5 6 7 8 9 10 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.946243
+Proximal: 0.862865
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0
+Useful traits:
+4 7 4 5 7 5 5 5 
+Payoffs for traits:
+0.25 1.625 0.25 0.625 1.625 0.625 0.625 0.625
+Trait weights:
+4.23757e-05 0.491681 4.23757e-05 0.00413825 0.491681 0.00413825 0.00413825 0.00413825
+Sampled trait: 7
+Updating
+Feedback: 1.625
+Agent 779 updated
+Flat tree
+No unknown traits
+Updating
+Agent 970 updated
+Flat tree
+Unknown traits:
+13 14
+Innovation
+Innovation done
+Updating
+Feedback: 0.5
+Agent 943 updated
+Flat tree
+Unknown traits:
+4 7 11 12 15
+Social learning
+Sampling strategy
+Payoff: 0.872791
+Proximal: 0.907485
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 1
+Demonstrator weights:
+0.186047 0.0465116 0.0930233 0.0930233 0.0232558 0.186047 0.0930233 0.0930233 0.186047
+Sampled traits:
+11 11 12 12 7 12 12 15 15
+Sampled trait15
+Updating
+Feedback: 0.375
+Agent 928 updated
+Flat tree
+Unknown traits:
+4 7 8 9 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.983389
+Proximal: 0.893377
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 0 0 1 1 1 0 0 0
+Useful traits:
+4 15 13 7 15 8 15
+Payoffs for traits:
+0.125 1.875 1.5 0.875 1.875 0.5 1.875
+Trait weights:
+3.9296e-07 0.298404 0.097781 0.00660448 0.298404 0.000402391 0.298404
+Sampled trait: 13
+Updating
+Feedback: 1.5
+Agent 729 updated
+Flat tree
+Unknown traits:
+4 7 9 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.757895
+Proximal: 0.790345
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 1 0 1 0 1 0 0 0
+Useful traits:
+4 4 4 13 4 4 4 4 4
+Payoffs for traits:
+0.75 0.75 0.75 1.375 0.75 0.75 0.75 0.75 0.75
+Trait weights:
+0.0348295 0.0348295 0.0348295 0.721364 0.0348295 0.0348295 0.0348295 0.0348295 0.0348295
+Sampled trait: 4
+Updating
+Feedback: 0.75
+Agent 6 updated
+Flat tree
+Unknown traits:
+4 11 13 15
+Social learning
+Sampling strategy
+Payoff: 0.889713
+Proximal: 0.879339
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 1 1 1 1 0 1 0 1 0
+Useful traits:
+4 4 4 4 11
+Payoffs for traits:
+0.25 0.25 0.25 0.25 0.375
+Trait weights:
+0.0862534 0.0862534 0.0862534 0.0862534 0.654987
+Sampled trait: 11
+Updating
+Feedback: 0.375
+Agent 5 updated
+Flat tree
+Unknown traits:
+6 10 15
+Social learning
+Sampling strategy
+Payoff: 1.06502
+Proximal: 0.957131
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 0
+Useful traits:
+6 6 6 6 6 15 6
+Payoffs for traits:
+0.75 0.75 0.75 0.75 0.75 0.125 0.75
+Trait weights:
+0.166663 0.166663 0.166663 0.166663 0.166663 2.1433e-05 0.166663
+Sampled trait: 6
+Updating
+Feedback: 0.75
+Agent 449 updated
+Flat tree
+Unknown traits:
+5 6 7
+Social learning
+Sampling strategy
+Payoff: 0.90974
+Proximal: 0.917467
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 3
+Demonstrator weights:
+0.4 0.4 0.1 0.1
+Sampled traits:
+5 7 6 6
+Sampled trait5
+Updating
+Feedback: 0.5
+Agent 948 updated
+Flat tree
+Unknown traits:
+5 6 10 13 14
+Social learning
+Sampling strategy
+Payoff: 1.02216
+Proximal: 0.915712
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 0 1 1 1 0 1 1 0 0 1
+Useful traits:
+5 5 6 5 5 5 5 5
+Payoffs for traits:
+0.625 0.625 0.5 0.625 0.625 0.625 0.625 0.625
+Trait weights:
+0.136469 0.136469 0.0447181 0.136469 0.136469 0.136469 0.136469 0.136469
+Sampled trait: 5
+Updating
+Feedback: 0.625
+Agent 157 updated
+Flat tree
+Unknown traits:
+6 8
+Social learning
+Sampling strategy
+Payoff: 1.01261
+Proximal: 0.930363
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1
+Useful traits:
+8 8 6 6
+Payoffs for traits:
+0.25 0.25 0.375 0.375
+Trait weights:
+0.0581818 0.0581818 0.441818 0.441818
+Sampled trait: 6
+Updating
+Feedback: 0.375
+Agent 333 updated
+Flat tree
+Unknown traits:
+9 11 13 14
+Social learning
+Sampling strategy
+Payoff: 1.05969
+Proximal: 0.965263
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 0 1 0 1 0 0 1
+Useful traits:
+9 11 9 13 9 11
+Payoffs for traits:
+0.875 0.5 0.875 0.375 0.875 0.5
+Trait weights:
+0.318846 0.0194263 0.318846 0.00460996 0.318846 0.0194263
+Sampled trait: 9
+Updating
+Feedback: 0.875
+Agent 143 updated
+Flat tree
+Unknown traits:
+5 6 7 8 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.03622
+Proximal: 0.903051
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 0 0 0 1 0 0 0 0 0 0
+Useful traits:
+5 5 5 5 5 5 5 5 5 11
+Payoffs for traits:
+0.875 0.875 0.875 0.875 0.875 0.875 0.875 0.875 0.875 1.75
+Trait weights:
+0.0243902 0.0243902 0.0243902 0.0243902 0.0243902 0.0243902 0.0243902 0.0243902 0.0243902 0.780488
+Sampled trait: 5
+Updating
+Feedback: 0.875
+Agent 237 updated
+Flat tree
+Unknown traits:
+1 4 9 12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.972608
+Proximal: 0.876312
+Strategy: Payoff
+Focal traits:
+1 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0
+Useful traits:
+14 14 14 14 1 1 1 1
+Payoffs for traits:
+1.375 1.375 1.375 1.375 0.25 0.25 0.25 0.25
+Trait weights:
+0.24995 0.24995 0.24995 0.24995 4.96638e-05 4.96638e-05 4.96638e-05 4.96638e-05
+Sampled trait: 14
+Updating
+Feedback: 1.375
+Agent 377 updated
+Flat tree
+Unknown traits:
+8 11 15
+Social learning
+Sampling strategy
+Payoff: 1.09512
+Proximal: 0.988361
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 0
+Useful traits:
+8 15 15 15 8
+Payoffs for traits:
+0.125 0.75 0.75 0.75 0.125
+Trait weights:
+4.28633e-05 0.333305 0.333305 0.333305 4.28633e-05
+Sampled trait: 15
+Updating
+Feedback: 0.75
+Agent 191 updated
+Flat tree
+Unknown traits:
+7 11 12 15
+Social learning
+Sampling strategy
+Payoff: 0.935546
+Proximal: 0.945718
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Demonstrator weights:
+0.190476 0.047619 0.190476 0.190476 0.190476 0.190476
+Sampled traits:
+12 7 11 11 7 15
+Sampled trait15
+Updating
+Feedback: 0.5
+Agent 568 updated
+Flat tree
+Unknown traits:
+4 5 7 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.04992
+Proximal: 0.955389
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 1 0 1 0 0 0 0 0 0 0
+Useful traits:
+4 13 5 4 7 4 4 4
+Payoffs for traits:
+0.375 1.875 0.25 0.375 1.125 0.375 0.375 0.375
+Trait weights:
+0.00029646 0.926439 3.90401e-05 0.00029646 0.0720399 0.00029646 0.00029646 0.00029646
+Sampled trait: 13
+Updating
+Feedback: 1.875
+Agent 342 updated
+Flat tree
+Unknown traits:
+1 4 5 7 9 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.07454
+Proximal: 0.950605
+Strategy: Payoff
+Focal traits:
+1 0 1 1 0 0 1 0 1 0 1 0 0 0 0 0
+Useful traits:
+1 5 1 1 1 1 9 5
+Payoffs for traits:
+0.375 0.875 0.375 0.375 0.375 0.375 1.875 0.875
+Trait weights:
+0.000305967 0.0211621 0.000305967 0.000305967 0.000305967 0.000305967 0.956146 0.0211621
+Sampled trait: 9
+Updating
+Feedback: 1.875
+Agent 571 updated
+Flat tree
+Unknown traits:
+7 8 12 13
+Social learning
+Sampling strategy
+Payoff: 0.882526
+Proximal: 1.05512
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 1
+Demonstrator weights:
+0.166667 0.333333 0.166667 0.333333
+Sampled traits:
+8 13 13 13
+Sampled trait13
+Updating
+Feedback: 0.75
+Agent 826 updated
+Flat tree
+Unknown traits:
+2 6 10 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.86163
+Proximal: 0.7916
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 0 1 1 1 0 0 1 0 0 0
+Useful traits:
+6 2 6 6 6 2 6 2
+Payoffs for traits:
+1.25 0.375 1.25 1.25 1.25 0.375 1.25 0.375
+Trait weights:
+0.199709 0.000485292 0.199709 0.199709 0.199709 0.000485292 0.199709 0.000485292
+Sampled trait: 6
+Updating
+Feedback: 1.25
+Agent 507 updated
+Flat tree
+Unknown traits:
+7 8 11 12 13 14 
+Social learning
+Sampling strategy
+Payoff: 0.842443
+Proximal: 0.843512
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 0 0 1 1 0 0 0 0 1
+Useful traits:
+8 11 7
+Payoffs for traits:
+0.375 0.75 0.625
+Trait weights:
+0.0218055 0.697775 0.28042
+Sampled trait: 11
+Updating
+Feedback: 0.75
+Agent 709 updated
+Flat tree
+Unknown traits:
+5 6 9 10 14
+Social learning
+Sampling strategy
+Payoff: 1.06792
+Proximal: 1.0207
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 0 1 1 0 0 1 1 1 0 1
+Useful traits:
+5
+Payoffs for traits:
+0.75
+Trait weights:
+1
+Sampled trait: 5
+Updating
+Feedback: 0.75
+Agent 111 updated
+Flat tree
+Unknown traits:
+3 5 7 8
+Social learning
+Sampling strategy
+Payoff: 0.951974
+Proximal: 0.937498
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 1 0 0 1 1 1 1 1 1 1
+Useful traits:
+5 5 5 5 5 7 8
+Payoffs for traits:
+0.5 0.5 0.5 0.5 0.5 0.75 0.375
+Trait weights:
+0.0779359 0.0779359 0.0779359 0.0779359 0.0779359 0.591826 0.0184946
+Sampled trait: 5
+Updating
+Feedback: 0.5
+Agent 662 updated
+Flat tree
+Unknown traits:
+4 6 10 11 13 15
+Social learning
+Sampling strategy
+Payoff: 0.809622
+Proximal: 0.847831
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 4
+Demonstrator weights:
+0.296296 0.296296 0.296296 0.0740741 0.037037
+Sampled traits:
+6 11 10 13 11
+Sampled trait11
+Updating
+Feedback: 0.75
+Agent 876 updated
+Flat tree
+Unknown traits:
+4 5 7 9 10 12 13
+Social learning
+Sampling strategy
+Payoff: 0.992937
+Proximal: 0.931823
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 1 0 1 0 0 1 0 0 1 1
+Useful traits:
+4 10 4 4 4 4 4 4
+Payoffs for traits:
+1 1.625 1 1 1 1 1 1
+Trait weights:
+0.0545525 0.618132 0.0545525 0.0545525 0.0545525 0.0545525 0.0545525 0.0545525
+Sampled trait: 10
+Updating
+Feedback: 1.625
+Agent 896 updated
+Flat tree
+Unknown traits:
+7 9 11 14
+Social learning
+Sampling strategy
+Payoff: 0.958465
+Proximal: 0.906703
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 0 1 0 1 0 1 1 0 1
+Useful traits:
+9 7 7 11 7 14
+Payoffs for traits:
+0.375 0.25 0.25 0.125 0.25 0.5
+Trait weights:
+0.178152 0.0234604 0.0234604 0.000733138 0.0234604 0.750733
+Sampled trait: 14
+Updating
+Feedback: 0.5
+Agent 936 updated
+Flat tree
+Unknown traits:
+3 5 6 8 9 10 11 12 15 
+Social learning
+Sampling strategy
+Payoff: 0.948691
+Proximal: 0.874751
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 0 1 0 0 0 0 0 1 1 0
+Useful traits:
+8 3 5 8 8 8 3 8 11 8
+Payoffs for traits:
+0.875 0.125 0.375 0.875 0.875 0.875 0.125 0.875 0.625 0.875
+Trait weights:
+0.161277 9.59582e-06 0.00233179 0.161277 0.161277 0.161277 9.59582e-06 0.161277 0.0299869 0.161277
+Sampled trait: 8
+Updating
+Feedback: 0.875
+Agent 959 updated
+Flat tree
+Unknown traits:
+8 11 12 13 14
+Social learning
+Sampling strategy
+Payoff: 0.908071
+Proximal: 0.894719
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 1
+Demonstrator weights:
+0.333333 0.666667
+Sampled traits:
+13 13
+Sampled trait13
+Updating
+Feedback: 0.5
+Agent 256 updated
+Flat tree
+No unknown traits
+Updating
+Agent 695 updated
+Flat tree
+Unknown traits:
+1 4 5 6 7 8 10 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.933404
+Proximal: 0.845876
+Strategy: Payoff
+Focal traits:
+1 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0
+Useful traits:
+1 1 1 1 1 4 1 6 1 4
+Payoffs for traits:
+0.125 0.125 0.125 0.125 0.125 0.625 0.125 1.375 0.125 0.625 
+Trait weights:
+5.977e-06 5.977e-06 5.977e-06 5.977e-06 5.977e-06 0.0186781 5.977e-06 0.962602 5.977e-06 0.0186781
+Sampled trait: 6
+Updating
+Feedback: 1.375
+Agent 280 updated
+Flat tree
+Unknown traits:
+3 4 5 11 12 14
+Social learning
+Sampling strategy
+Payoff: 0.871875
+Proximal: 0.861893
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 0 1 1 1 1 1 0 0 1 0 1
+Useful traits:
+14 3 3 3 4 4 4 4 11
+Payoffs for traits:
+1 0.25 0.25 0.25 0.5 0.5 0.5 0.5 0.75
+Trait weights:
+0.732475 0.000715308 0.000715308 0.000715308 0.0228898 0.0228898 0.0228898 0.0228898 0.17382
+Sampled trait: 14
+Updating
+Feedback: 1
+Agent 411 updated
+Flat tree
+No unknown traits
+Updating
+Agent 120 updated
+Flat tree
+Unknown traits:
+14
+Social learning
+Sampling strategy
+Payoff: 0.774133
+Proximal: 0.821089
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Demonstrator weights:
+0.333333 0.333333 0.333333
+Sampled traits:
+14 14 14
+Sampled trait14
+Updating
+Feedback: 0.125
+Agent 916 updated
+Flat tree
+Unknown traits:
+3 5 10 11 12 15
+Social learning
+Sampling strategy
+Payoff: 0.857712
+Proximal: 0.80165
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 1 1 1 1 0 0 0 1 1 0 
+Useful traits:
+5 3 5 11 11
+Payoffs for traits:
+0.5 0.25 0.5 1 1
+Trait weights:
+0.0151443 0.000473261 0.0151443 0.484619 0.484619
+Sampled trait: 11
+Updating
+Feedback: 1
+Agent 402 updated
+Flat tree
+Unknown traits:
+3 4 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.997463
+Proximal: 0.927393
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 1 1 1 0 0 0 0 0 0 0 0
+Useful traits:
+4 8 14 12 8 9 8 8 3
+Payoffs for traits:
+0.25 1.125 0.625 0.75 1.125 1.75 1.125 1.125 0.125
+Trait weights:
+4.07667e-05 0.0752261 0.00398113 0.00990631 0.0752261 0.685166 0.0752261 0.0752261 1.27396e-06
+Sampled trait: 8
+Updating
+Feedback: 1.125
+Agent 102 updated
+Flat tree
+Unknown traits:
+10 12 13
+Social learning
+Sampling strategy
+Payoff: 0.89484
+Proximal: 0.841119
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 0 1 0 0 1 1
+Useful traits:
+10 10 10 10 10
+Payoffs for traits:
+0.75 0.75 0.75 0.75 0.75
+Trait weights:
+0.2 0.2 0.2 0.2 0.2
+Sampled trait: 10
+Updating
+Feedback: 0.75
+Agent 401 updated
+Flat tree
+Unknown traits:
+1 4 5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.16476
+Proximal: 0.875556
+Strategy: Payoff
+Focal traits:
+1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+Useful traits:
+1 1 1 1 1 1 1 1 1 1
+Payoffs for traits:
+1 1 1 1 1 1 1 1 1 1
+Trait weights:
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+Sampled trait: 1
+Updating
+Feedback: 1
+Agent 365 updated
+Flat tree
+Unknown traits:
+7
+Social learning
+Sampling strategy
+Payoff: 0.850782
+Proximal: 0.841786
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Demonstrator weights:
+1
+Sampled traits:
+7
+Sampled trait7
+Updating
+Feedback: 0.125
+Agent 878 updated
+Flat tree
+Unknown traits:
+4 7 9 13
+Social learning
+Sampling strategy
+Payoff: 0.811578
+Proximal: 0.794249
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 3
+Demonstrator weights:
+0.235294 0.235294 0.235294 0.235294 0.0588235
+Sampled traits:
+7 4 4 7 7
+Sampled trait4
+Updating
+Feedback: 0.125
+Agent 580 updated
+Flat tree
+Unknown traits:
+6 7 8 11 12 14 15
+Social learning
+Sampling strategy
+Payoff: 1.06591
+Proximal: 0.965163
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 0 0 0 1 1 0 0 1 0 0 
+Useful traits:
+12 12 7 11 7 7 7 7
+Payoffs for traits:
+1.75 1.75 0.75 1.125 0.75 0.75 0.75 0.75
+Trait weights:
+0.458278 0.458278 0.0066259 0.0503154 0.0066259 0.0066259 0.0066259 0.0066259
+Sampled trait: 12
+Updating
+Feedback: 1.75
+Agent 979 updated
+Flat tree
+Unknown traits:
+2 3 11 13 14
+Social learning
+Sampling strategy
+Payoff: 0.81628
+Proximal: 0.816915
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 4
+Demonstrator weights:
+0.0606061 0.121212 0.242424 0.121212 0.121212 0.242424 0.0606061 0.030303
+Sampled traits:
+3 13 2 2 13 3 3 3
+Sampled trait2
+Updating
+Feedback: 0.375
+Agent 268 updated
+Flat tree
+Unknown traits:
+6 7 9 10 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.859349
+Proximal: 0.868171
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 6
+Number of new traits: 7
+Number of new traits: 8
+Number of new traits: 5
+Number of new traits: 3
+Number of new traits: 8
+Number of new traits: 5
+Number of new traits: 3
+Demonstrator weights:
+0.0454545 0.0227273 0.0113636 0.0909091 0.363636 0.0113636 0.0909091 0.363636
+Sampled traits:
+6 11 6 13 11 15 7 13 
+Sampled trait11
+Updating
+Feedback: 1.125
+Agent 545 updated
+Flat tree
+Unknown traits:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.14069
+Proximal: 0.970523
+Strategy: Payoff
+Focal traits:
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Useful traits:
+1 1 1 1 1 1 1 1 1 1
+Payoffs for traits:
+0.875 0.875 0.875 0.875 0.875 0.875 0.875 0.875 0.875 0.875
+Trait weights:
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+Sampled trait: 1
+Updating
+Feedback: 0.875
+Agent 288 updated
+Flat tree
+Unknown traits:
+1 2 4 5 7 8 9 10 12 13
+Social learning
+Sampling strategy
+Payoff: 0.880718
+Proximal: 0.826772
+Strategy: Payoff
+Focal traits:
+1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 1
+Useful traits:
+1 1 1 2 1 1 1 1 1 1
+Payoffs for traits:
+0.25 0.25 0.25 0.625 0.25 0.25 0.25 0.25 0.25 0.25
+Trait weights:
+0.00937592 0.00937592 0.00937592 0.915617 0.00937592 0.00937592 0.00937592 0.00937592 0.00937592 0.00937592
+Sampled trait: 2
+Updating
+Feedback: 0.625
+Agent 289 updated
+Flat tree
+Unknown traits:
+2 8 9 13 14
+Social learning
+Sampling strategy
+Payoff: 1.03169
+Proximal: 0.992163
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 1 0 0 1 1 1 0 0 1
+Useful traits:
+2 2 14 2 8
+Payoffs for traits:
+0.375 0.375 0.125 0.375 0.25
+Trait weights:
+0.318898 0.318898 0.00131234 0.318898 0.0419948
+Sampled trait: 2
+Updating
+Feedback: 0.375
+Agent 845 updated
+Flat tree
+Unknown traits:
+2 4 7 8 11 14
+Social learning
+Sampling strategy
+Payoff: 0.758923
+Proximal: 0.745529
+Strategy: Payoff
+Focal traits:
+1 1 0 1 0 1 1 0 0 1 1 0 1 1 0 1
+Useful traits:
+11 4 2 2 4 11 11 11 2
+Payoffs for traits:
+1.625 0.125 0.375 0.375 0.125 1.625 1.625 1.625 0.375
+Trait weights:
+0.249877 6.72991e-07 0.000163537 0.000163537 6.72991e-07 0.249877 0.249877 0.249877 0.000163537
+Sampled trait: 11
+Updating
+Feedback: 1.625
+Agent 92 updated
+Flat tree
+Unknown traits:
+3 5 9 10 11 12 13
+Social learning
+Sampling strategy
+Payoff: 0.977657
+Proximal: 0.946714
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 1 1 1 0 0 0 0 0 1 1
+Useful traits:
+5 3 12 5 11 3 5 10 11 
+Payoffs for traits:
+0.5 0.25 1.625 0.5 1.25 0.25 0.5 0.625 1.25
+Trait weights:
+0.00177299 5.54061e-05 0.642871 0.00177299 0.173144 5.54061e-05 0.00177299 0.00541075 0.173144
+Sampled trait: 12
+Updating
+Feedback: 1.625
+Agent 414 updated
+Flat tree
+Unknown traits:
+3 4 5 7 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.909169
+Proximal: 0.868598
+Strategy: Payoff
+Focal traits:
+1 1 1 0 0 0 1 0 1 1 0 0 0 0 0 0
+Useful traits:
+13 3 3 3 12 3 3 3 3 7
+Payoffs for traits:
+1.875 0.875 0.875 0.875 1.25 0.875 0.875 0.875 0.875 1.125
+Trait weights:
+0.732936 0.0162218 0.0162218 0.0162218 0.0965183 0.0162218 0.0162218 0.0162218 0.0162218 0.0569931
+Sampled trait: 13
+Updating
+Feedback: 1.875
+Agent 132 updated
+Flat tree
+Unknown traits:
+3 5 8 9 13
+Social learning
+Sampling strategy
+Payoff: 0.902862
+Proximal: 0.86059
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 1 1 0 0 1 1 1 0 1 1
+Useful traits:
+5 3 5 5 5 13 3 
+Payoffs for traits:
+0.5 0.25 0.5 0.5 0.5 0.875 0.25
+Trait weights:
+0.0488387 0.00152621 0.0488387 0.0488387 0.0488387 0.801593 0.00152621
+Sampled trait: 13
+Updating
+Feedback: 0.875
+Agent 922 updated
+Flat tree
+Unknown traits:
+2 5 7 9 10 12 14
+Social learning
+Sampling strategy
+Payoff: 0.859349
+Proximal: 0.875876
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 5
+Number of new traits: 1
+Number of new traits: 4
+Number of new traits: 7
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 5
+Demonstrator weights:
+0.13278 0.0165975 0.26556 0.033195 0.00414938 0.13278 0.26556 0.13278 0.0165975
+Sampled traits:
+9 5 12 10 2 9 12 14 9
+Sampled trait9
+Updating
+Feedback: 1.25
+Agent 545 updated
+Flat tree
+Unknown traits:
+10
+Innovation
+Innovation done
+Updating
+Feedback: 0.5
+Agent 690 updated
+Flat tree
+Unknown traits:
+2 4 5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.997078
+Proximal: 0.946714
+Strategy: Payoff
+Focal traits:
+1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+Useful traits:
+4 2 2 4 2 2 2 2 2 2 
+Payoffs for traits:
+1 0.875 0.875 1 0.875 0.875 0.875 0.875 0.875 0.875
+Trait weights:
+0.163847 0.0840384 0.0840384 0.163847 0.0840384 0.0840384 0.0840384 0.0840384 0.0840384 0.0840384
+Sampled trait: 4
+Updating
+Feedback: 1
+Agent 414 updated
+Flat tree
+Unknown traits:
+3 4 5 7 9 12 14 15
+Innovation
+Innovation done
+Updating
+Feedback: 0.25
+Agent 549 updated
+Flat tree
+Unknown traits:
+5 6 7 9 10 11 13 15
+Social learning
+Sampling strategy
+Payoff: 0.828451
+Proximal: 0.805224
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 5
+Number of new traits: 2
+Number of new traits: 5
+Number of new traits: 1
+Number of new traits: 4
+Demonstrator weights:
+0.105263 0.105263 0.210526 0.210526 0.0131579 0.105263 0.0131579 0.210526 0.0263158
+Sampled traits:
+6 13 6 6 11 6 11 6 13
+Sampled trait6
+Updating
+Feedback: 1.375
+Agent 880 updated
+Flat tree
+Unknown traits:
+3 5 12 13
+Social learning
+Sampling strategy
+Payoff: 0.899482
+Proximal: 0.847954
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 1
+Number of new traits: 4
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 1
+Demonstrator weights:
+0.242424 0.030303 0.0606061 0.242424 0.0606061 0.121212 0.242424 
+Sampled traits:
+13 13 3 3 12 13 5
+Sampled trait3
+Updating
+Feedback: 0.25
+Agent 797 updated
+Flat tree
+Unknown traits:
+1 5 7 10 13
+Social learning
+Sampling strategy
+Payoff: 0.890981
+Proximal: 0.843803
+Strategy: Payoff
+Focal traits:
+1 0 1 1 1 0 1 0 1 1 0 1 1 0 1 1
+Useful traits:
+1 13 5 7 1 1 1 1
+Payoffs for traits:
+0.125 0.5 0.375 0.25 0.125 0.125 0.125 0.125
+Trait weights:
+0.000766871 0.785276 0.18635 0.0245399 0.000766871 0.000766871 0.000766871 0.000766871
+Sampled trait: 13
+Updating
+Feedback: 0.5
+Agent 265 updated
+Flat tree
+Unknown traits:
+2 5 8 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.05638
+Proximal: 0.890432
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 0 1 1 0 1 1 0 0 0 0 0
+Useful traits:
+2 5 8 2 5 2
+Payoffs for traits:
+0.25 0.875 0.5 0.25 0.875 0.25
+Trait weights:
+0.000921287 0.483877 0.0294812 0.000921287 0.483877 0.000921287
+Sampled trait: 5
+Updating
+Feedback: 0.875
+Agent 135 updated
+Flat tree
+Unknown traits:
+4 5 9 11 14
+Social learning
+Sampling strategy
+Payoff: 0.857125
+Proximal: 0.868564
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 5
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 4
+Demonstrator weights:
+0.0727273 0.0181818 0.0727273 0.290909 0.0727273 0.145455 0.290909 0.0363636
+Sampled traits:
+4 14 14 9 9 11 14 14
+Sampled trait11
+Updating
+Feedback: 0.625
+Agent 445 updated
+Flat tree
+Unknown traits:
+1 2 3 4 5 7 8 9 10 11 12 13 15
+Social learning
+Sampling strategy
+Payoff: 0.834257
+Proximal: 0.801466
+Strategy: Payoff
+Focal traits:
+1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0
+Useful traits:
+1 1 3 1 1 1 1 1 1 3
+Payoffs for traits:
+0.25 0.25 1.375 0.25 0.25 0.25 0.25 0.25 0.25 1.375
+Trait weights:
+9.92685e-05 9.92685e-05 0.499603 9.92685e-05 9.92685e-05 9.92685e-05 9.92685e-05 9.92685e-05 9.92685e-05 0.499603
+Sampled trait: 3
+Updating
+Feedback: 1.375
+Agent 195 updated
+Flat tree
+Unknown traits:
+2 9 15
+Social learning
+Sampling strategy
+Payoff: 0.86232
+Proximal: 0.835733
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 0
+Useful traits:
+2 2 2 2 2
+Payoffs for traits:
+0.125 0.125 0.125 0.125 0.125
+Trait weights:
+0.2 0.2 0.2 0.2 0.2
+Sampled trait: 2
+Updating
+Feedback: 0.125
+Agent 189 updated
+Flat tree
+Unknown traits:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.879801
+Proximal: 0.869715
+Strategy: Payoff
+Focal traits:
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Useful traits:
+1 1 1 1 1 1 1 1 1 1
+Payoffs for traits:
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+Trait weights:
+0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1
+Sampled trait: 1
+Updating
+Feedback: 0.5
+Agent 714 updated
+Flat tree
+Unknown traits:
+8 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.984679
+Proximal: 0.876312
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 0 1 1 1 0 0 0 0
+Useful traits:
+8 8 8 13 13 13 12
+Payoffs for traits:
+0.375 0.375 0.375 0.5 0.5 0.5 0.625 
+Trait weights:
+0.0350852 0.0350852 0.0350852 0.147849 0.147849 0.147849 0.451198
+Sampled trait: 12
+Updating
+Feedback: 0.625
+Agent 377 updated
+Flat tree
+Unknown traits:
+2 7 8 9 12
+Social learning
+Sampling strategy
+Payoff: 0.821304
+Proximal: 0.875864
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 5
+Number of new traits: 1
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 3
+Number of new traits: 1
+Demonstrator weights:
+0.015873 0.253968 0.031746 0.253968 0.126984 0.0634921 0.253968
+Sampled traits:
+7 7 2 2 2 12 2
+Sampled trait2
+Updating
+Feedback: 0.5
+Agent 786 updated
+Flat tree
+Unknown traits:
+4 15
+Social learning
+Sampling strategy
+Payoff: 0.84805
+Proximal: 0.841377
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0
+Useful traits:
+4 4 4 4
+Payoffs for traits:
+0.25 0.25 0.25 0.25
+Trait weights:
+0.25 0.25 0.25 0.25
+Sampled trait: 4
+Updating
+Feedback: 0.25
+Agent 185 updated
+Flat tree
+Unknown traits:
+14 15
+Social learning
+Sampling strategy
+Payoff: 0.861598
+Proximal: 0.842964
+Strategy: Proximal
+Updating
+Agent 648 updated
+Flat tree
+Unknown traits:
+10
+Social learning
+Sampling strategy
+Payoff: 0.900892
+Proximal: 0.889729
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1
+Useful traits:
+10
+Payoffs for traits:
+0.125
+Trait weights:
+1
+Sampled trait: 10
+Updating
+Feedback: 0.125
+Agent 397 updated
+Flat tree
+Unknown traits:
+6 8 9 10 11 12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.962558
+Proximal: 0.980659
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 4
+Number of new traits: 2
+Number of new traits: 4
+Number of new traits: 4
+Number of new traits: 4
+Number of new traits: 4
+Number of new traits: 4
+Number of new traits: 3
+Number of new traits: 8
+Demonstrator weights:
+0.0829016 0.331606 0.0829016 0.0829016 0.0829016 0.0829016 0.0829016 0.165803 0.00518135
+Sampled traits:
+11 6 15 6 15 8 8 12 11
+Sampled trait6
+Updating
+Feedback: 0.875
+Agent 400 updated
+Flat tree
+Unknown traits:
+12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.90974
+Proximal: 0.904943
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 0
+Useful traits:
+12 15 14 15
+Payoffs for traits:
+0.875 1.125 0.125 1.125
+Trait weights:
+0.124583 0.437705 7.41257e-06 0.437705
+Sampled trait: 12
+Updating
+Feedback: 0.875
+Agent 948 updated
+Flat tree
+Unknown traits:
+2 8 10 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.850782
+Proximal: 0.820283
+Strategy: Payoff
+Focal traits:
+1 1 0 1 1 1 1 1 0 1 0 0 1 0 0 0
+Useful traits:
+2 2 2 10 2 2 10 2
+Payoffs for traits:
+0.625 0.625 0.625 1 0.625 0.625 1 0.625
+Trait weights:
+0.0370761 0.0370761 0.0370761 0.388772 0.0370761 0.0370761 0.388772 0.0370761
+Sampled trait: 10
+Updating
+Feedback: 1
+Agent 878 updated
+Flat tree
+Unknown traits:
+2 3 4 11 13 14
+Social learning
+Sampling strategy
+Payoff: 0.875909
+Proximal: 0.892869
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Demonstrator weights:
+0.0294118 0.235294 0.0294118 0.235294 0.235294 0.235294
+Sampled traits:
+3 11 14 14 11 4
+Sampled trait11
+Updating
+Feedback: 0.125
+Agent 869 updated
+Flat tree
+Unknown traits:
+15
+Innovation
+Innovation done
+Updating
+Feedback: 0.25
+Agent 521 updated
+Flat tree
+Unknown traits:
+6 11 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.938265
+Proximal: 1.04172
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 3
+Number of new traits: 5
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 4
+Demonstrator weights:
+0.0851064 0.0212766 0.340426 0.340426 0.170213 0.0425532
+Sampled traits:
+13 15 14 13 15 15
+Sampled trait14
+Updating
+Feedback: 0.75
+Agent 475 updated
+Flat tree
+Unknown traits:
+5 6 7 8 9 12 14
+Social learning
+Sampling strategy
+Payoff: 0.905681
+Proximal: 0.846808
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 0 0 0 0 0 1 1 0 1 0 1
+Useful traits:
+5 5 6 5 5 5 6 5 5
+Payoffs for traits:
+0.75 0.75 1 0.75 0.75 0.75 1 0.75 0.75
+Trait weights:
+0.0648173 0.0648173 0.27314 0.0648173 0.0648173 0.0648173 0.27314 0.0648173 0.0648173
+Sampled trait: 5
+Updating
+Feedback: 0.75
+Agent 107 updated
+Flat tree
+Unknown traits:
+4 5 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.04163
+Proximal: 0.962536
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 1 1 0 0 0 0 0 0 0 0
+Useful traits:
+4 4 5 4 4 4 4 10 4 4
+Payoffs for traits:
+1.125 1.125 1.375 1.125 1.125 1.125 1.125 1.875 1.125 1.125
+Trait weights:
+0.0423953 0.0423953 0.11563 0.0423953 0.0423953 0.0423953 0.0423953 0.545208 0.0423953 0.0423953
+Sampled trait: 10
+Updating
+Feedback: 1.875
+Agent 58 updated
+Flat tree
+Unknown traits:
+4 7 10 13 15
+Social learning
+Sampling strategy
+Payoff: 0.830875
+Proximal: 0.765944
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 1 1 0 1 1 0 1 1 0 1 0
+Useful traits:
+4 4 15 4 15 4 4
+Payoffs for traits:
+0.25 0.25 0.375 0.25 0.375 0.25 0.25
+Trait weights:
+0.0495356 0.0495356 0.376161 0.0495356 0.376161 0.0495356 0.0495356
+Sampled trait: 15
+Updating
+Feedback: 0.375
+Agent 683 updated
+Flat tree
+Unknown traits:
+4 5 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 1.0012
+Proximal: 0.948904
+Strategy: Payoff
+Focal traits:
+1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+Useful traits:
+4 4 4 4 4 4 5 5 5 4
+Payoffs for traits:
+0.875 0.875 0.875 0.875 0.875 0.875 1.125 1.125 1.125 0.875
+Trait weights:
+0.0570123 0.0570123 0.0570123 0.0570123 0.0570123 0.0570123 0.200305 0.200305 0.200305 0.0570123
+Sampled trait: 4
+Updating
+Feedback: 0.875
+Agent 118 updated
+Flat tree
+No unknown traits
+Updating
+Agent 406 updated
+Flat tree
+Unknown traits:
+4 5 6 8 10 13 14
+Social learning
+Sampling strategy
+Payoff: 0.83557
+Proximal: 0.85892
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 2
+Number of new traits: 7
+Number of new traits: 1
+Number of new traits: 3
+Demonstrator weights:
+0.13278 0.26556 0.13278 0.13278 0.00414938 0.26556 0.06639
+Sampled traits:
+8 14 8 4 6 10 8 
+Sampled trait10
+Updating
+Feedback: 0.75
+Agent 486 updated
+Flat tree
+Unknown traits:
+9 15
+Social learning
+Sampling strategy
+Payoff: 0.8402
+Proximal: 0.835733
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0
+Useful traits:
+15 9 9 15 15
+Payoffs for traits:
+0.75 0.25 0.25 0.75 0.75
+Trait weights:
+0.332421 0.00136799 0.00136799 0.332421 0.332421
+Sampled trait: 15
+Updating
+Feedback: 0.75
+Agent 189 updated
+Flat tree
+Unknown traits:
+14
+Social learning
+Sampling strategy
+Payoff: 0.917608
+Proximal: 0.81989
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
+Useful traits:
+14 14 14 14 14
+Payoffs for traits:
+0.375 0.375 0.375 0.375 0.375
+Trait weights:
+0.2 0.2 0.2 0.2 0.2
+Sampled trait: 14
+Updating
+Feedback: 0.375
+Agent 18 updated
+Flat tree
+Unknown traits:
+3 5 6 8 9 10 11 12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.891413
+Proximal: 0.842774
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 0 0 1 0 0 0 0 0 1 0 0
+Useful traits:
+5 6 8 8 8 5 3 12 6 3 
+Payoffs for traits:
+0.375 0.25 0.875 0.875 0.875 0.375 0.125 0.75 0.25 0.125
+Trait weights:
+0.00413624 0.00054469 0.286081 0.286081 0.286081 0.00413624 1.70216e-05 0.13236 0.00054469 1.70216e-05
+Sampled trait: 8
+Updating
+Feedback: 0.875
+Agent 233 updated
+Flat tree
+Unknown traits:
+2 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.777637
+Proximal: 0.784041
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 5
+Number of new traits: 6
+Number of new traits: 7
+Number of new traits: 2
+Number of new traits: 4
+Number of new traits: 2
+Demonstrator weights:
+0.182857 0.365714 0.0228571 0.0114286 0.00571429 0.182857 0.0457143 0.182857
+Sampled traits:
+11 2 13 14 2 2 2 15
+Sampled trait2
+Updating
+Feedback: 0.375
+Agent 787 updated
+Flat tree
+Unknown traits:
+5 7 9 12 13
+Social learning
+Sampling strategy
+Payoff: 0.794791
+Proximal: 0.823991
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 4
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 1
+Number of new traits: 2
+Demonstrator weights:
+0.097561 0.0243902 0.195122 0.195122 0.195122 0.195122 0.097561
+Sampled traits:
+12 7 13 12 9 13 5
+Sampled trait13
+Updating
+Feedback: 1.125
+Agent 194 updated
+Flat tree
+Unknown traits:
+6 9 10 14 15
+Social learning
+Sampling strategy
+Payoff: 0.969358
+Proximal: 0.9361
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 0 1 1 0 0 1 1 1 0 0
+Useful traits:
+6 9 15 6 15 15 6 10
+Payoffs for traits:
+0.375 0.5 0.875 0.375 0.875 0.875 0.375 0.25
+Trait weights:
+0.00465464 0.0196146 0.321936 0.00465464 0.321936 0.321936 0.00465464 0.000612956
+Sampled trait: 15
+Updating
+Feedback: 0.875
+Agent 762 updated
+Flat tree
+Unknown traits:
+2 4 9 11
+Social learning
+Sampling strategy
+Payoff: 0.888845
+Proximal: 0.860645
+Strategy: Payoff
+Focal traits:
+1 1 0 1 0 1 1 1 1 0 1 0 1 1 1 1
+Useful traits:
+2 2 11 2 11 4 4
+Payoffs for traits:
+0.125 0.125 0.625 0.125 0.625 0.375 0.375
+Trait weights:
+0.00014839 0.00014839 0.463719 0.00014839 0.463719 0.0360588 0.0360588
+Sampled trait: 11
+Updating
+Feedback: 0.625
+Agent 821 updated
+Flat tree
+Unknown traits:
+5 7 9 12 13
+Social learning
+Sampling strategy
+Payoff: 0.814981
+Proximal: 0.839847
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 3
+Number of new traits: 1
+Number of new traits: 2
+Number of new traits: 1
+Number of new traits: 3
+Demonstrator weights:
+0.111111 0.222222 0.0555556 0.222222 0.111111 0.222222 0.0555556
+Sampled traits:
+5 13 12 7 5 13 5
+Sampled trait5
+Updating
+Feedback: 0.375
+Agent 184 updated
+Flat tree
+Unknown traits:
+3 10 12 14 15
+Social learning
+Sampling strategy
+Payoff: 0.915567
+Proximal: 0.865462
+Strategy: Payoff
+Focal traits:
+1 1 1 0 1 1 1 1 1 1 0 1 0 1 0 0
+Useful traits:
+3 10 14 3 10 3
+Payoffs for traits:
+0.5 0.625 0.75 0.5 0.625 0.5
+Trait weights:
+0.05989 0.18277 0.45479 0.05989 0.18277 0.05989
+Sampled trait: 14
+Updating
+Feedback: 0.75
+Agent 585 updated
+Flat tree
+Unknown traits:
+7 8 12
+Social learning
+Sampling strategy
+Payoff: 0.954789
+Proximal: 0.859151
+Strategy: Payoff
+Focal traits:
+1 1 1 1 1 1 1 0 0 1 1 1 0 1 1 1
+Useful traits:
+12 7 8 8 7
+Payoffs for traits:
+0.125 0.375 0.625 0.625 0.375
+Trait weights:
+0.000148434 0.0360695 0.463856 0.463856 0.0360695
+Sampled trait: 8
+Updating
+Feedback: 0.625
+Agent 893 updated
+Flat tree
+Unknown traits:
+2 4 7 8 9 10 14
+Social learning
+Sampling strategy
+Payoff: 0.91346
+Proximal: 0.887958
+Strategy: Payoff
+Focal traits:
+1 1 0 1 0 1 1 0 0 0 0 1 1 1 0 1
+Useful traits:
+2 2 4 2 2 7 2 10 
+Payoffs for traits:
+0.375 0.375 0.125 0.375 0.375 0.875 0.375 1.375
+Trait weights:
+0.00135698 0.00135698 5.58428e-06 0.00135698 0.00135698 0.0938551 0.00135698 0.899354
+Sampled trait: 10
+Updating
+Feedback: 1.375
+Agent 255 updated
+Flat tree
+Unknown traits:
+2 3 4 6 7 8 9 10 11 12 13 14 15
+Social learning
+Sampling strategy
+Payoff: 0.843966
+Proximal: 0.871635
+Strategy: Proximal
+Finding new traits in demonstrators
+Number of new traits: 7
+Number of new traits: 4
+Number of new traits: 2
+Number of new traits: 10
+Number of new traits: 6
+Number of new traits: 4
+Number of new traits: 11
+Number of new traits: 9
+Number of new traits: 9
+Number of new traits: 7
+Demonstrator weights:
+0.0189798 0.151839 0.607355 0.00237248 0.0379597 0.151839 0.00118624 0.00474496 0.00474496 0.0189798
+Sampled traits:
+12 11 15 11 9 6 11 3 11 3
+Sampled trait15
+Updating
+Feedback: 1.125
+Agent 43 updated

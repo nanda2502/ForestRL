@@ -180,6 +180,15 @@ std::vector<size_t> Agents::getUsefulDemonstrators(size_t focalAgent, size_t tre
 size_t Agents::learnPayoffBased(size_t treeIndex, const std::vector<size_t>& usefulTraits, std::mt19937& gen) {
     constexpr double SENSITIVITY = 5.0;
     std::vector<double> traitWeights(usefulTraits.size(), 0.0);
+    if (debug >=1) {
+        std::vector<double> payoffsForTraits;
+        payoffsForTraits.reserve(usefulTraits.size());
+        for (size_t trait : usefulTraits) {
+            payoffsForTraits.push_back(payoffs[treeIndex][trait]);
+        }
+        std::cout << "Payoffs for traits:\n";
+        printVector(payoffsForTraits);
+    }
 
     double weightSum = 0.0;
     for (size_t i = 0; i < usefulTraits.size(); i++) {
@@ -248,7 +257,7 @@ size_t Agents::learnProximal(size_t focalAgent, const std::vector<size_t>& usefu
     // sample a trait from the weighted distribution
     std::discrete_distribution<> distribution(demonstratorWeights.begin(), demonstratorWeights.end());
     size_t sampledDemonstratorIndex = distribution(gen);
-    if (debug >= 1) std::cout << "Sampled trait" << sampledTraits[sampledDemonstratorIndex] << '\n';
+    if (debug >= 1) std::cout << "Sampled trait: " << sampledTraits[sampledDemonstratorIndex] << '\n';
     return sampledTraits[sampledDemonstratorIndex];
 }
 
@@ -272,7 +281,7 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
         double feedback;
         if (isLearnable(chosenTrait, agentIndex, treeIndex, tree)) {
             repertoires[agentIndex][treeIndex][chosenTrait] = 1;
-            feedback = payoffs[treeIndex][chosenTrait] / payoffTotal;
+            feedback = payoffs[treeIndex][chosenTrait]; // payoffTotal;
         } else {
             feedback = -1.0;
         }
@@ -302,8 +311,9 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    auto treeIndex = sampleIndex(params.num_trees, gen);
     auto agentIndex = sampleIndex(params.num_agents, gen);
+    auto treeIndex = sampleIndex(params.num_trees, gen);
+    //auto treeIndex = sampleUnexploredTree(agentIndex, gen);
 
     if (debug >= 1) {
         if (trees[treeIndex][0][2] == 1) {
@@ -366,6 +376,7 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
         }
     }
     update(chosenTrait, agentIndex, treeIndex, strategy, trees[treeIndex], params, gen);
+    if (debug >= 1) std::cout << "Agent " << agentIndex << " updated" << '\n';
 }
 
 double Agents::computeProportion() {
@@ -373,4 +384,50 @@ double Agents::computeProportion() {
     auto start = chosenStrategy.end() - numElements;
     double sum = std::accumulate(start, chosenStrategy.end(), 0);
     return sum / numElements;
+}
+
+void Agents::printMeanEVs() {
+    size_t numAgents = expectedValues.size();
+
+    double totalPayoffEV = 0.0;
+    double totalProximalEV = 0.0;
+
+    for (const auto& ev : expectedValues) {
+        totalPayoffEV += ev.payoff;
+        totalProximalEV += ev.proximal;
+    }
+
+    double meanPayoffEV = totalPayoffEV / numAgents;
+    double meanProximalEV = totalProximalEV / numAgents;
+
+    std::cout << "Mean Expected Value for Payoff Strategy: " << meanPayoffEV << std::endl;
+    std::cout << "Mean Expected Value for Proximal Strategy: " << meanProximalEV << std::endl;
+}
+
+
+size_t Agents::sampleUnexploredTree(size_t agentIndex, std::mt19937& gen) {
+    const auto& agentRepertoire = repertoires[agentIndex];
+    std::vector<size_t> smallestTraitTrees;
+    size_t minTraitCount = std::numeric_limits<size_t>::max();
+
+    // Determine the minimum number of traits across all trees
+    for (const auto& tree : agentRepertoire) {
+        size_t traitCount = std::count(tree.begin(), tree.end(), 1);
+        if (traitCount < minTraitCount) {
+            minTraitCount = traitCount;
+        }
+    }
+
+    // Collect all trees that have the minimum trait count
+    for (size_t treeIndex = 0; treeIndex < agentRepertoire.size(); ++treeIndex) {
+        const auto& tree = agentRepertoire[treeIndex];
+        size_t traitCount = std::count(tree.begin(), tree.end(), 1);
+        if (traitCount == minTraitCount) {
+            smallestTraitTrees.push_back(treeIndex);
+        }
+    }
+
+    // Sample randomly from the trees with the smallest number of traits
+    std::uniform_int_distribution<size_t> treeDist(0, smallestTraitTrees.size() - 1);
+    return smallestTraitTrees[treeDist(gen)];
 }
