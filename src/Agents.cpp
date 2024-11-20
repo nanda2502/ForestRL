@@ -50,17 +50,18 @@ std::vector<double> makeFlatDist(const Params& params) {
 }
 
 size_t sampleLifetime(const Params& params, std::mt19937& gen) {
-    double mean =  params.lifetime_scale * params.num_trees;
+    double mean =  params.lifetime_scale;
 
-    std::poisson_distribution<size_t> lifetime_dist(mean);
+    std::poisson_distribution<size_t> lifetimeDist(mean);
 
-    return lifetime_dist(gen);
+    size_t baseLifetime = lifetimeDist(gen);
+
+    return baseLifetime * params.num_trees;
 } 
 
 void Agents::initialize(const Params& params, const std::vector<Tree>& trees) { 
     std::random_device rd;
     std::mt19937 gen(rd());
-
     for (size_t agent = 0; agent < params.num_agents; ++agent) {
         lifetimes[agent] = sampleLifetime(params, gen);
         for (size_t tree_idx = 0; tree_idx < params.num_trees; ++tree_idx) {
@@ -261,6 +262,43 @@ size_t Agents::learnProximal(size_t focalAgent, const std::vector<size_t>& usefu
     return sampledTraits[sampledDemonstratorIndex];
 }
 
+int computeDelta(const std::vector<size_t>& focalTraits, const std::vector<size_t>& demoTraits) {
+    return std::inner_product(focalTraits.begin(), focalTraits.end(), demoTraits.begin(), 0, 
+    std::plus<>(),
+    [](size_t focal_i, size_t demo_i) {
+        return (focal_i == 1 && demo_i == 0) ? 1 : 0;
+    }
+    );
+}
+
+size_t Agents::learnProximalMarkov(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen) {
+    auto focalTraits = repertoires[focalAgent][treeIndex];
+    std::vector<double> traitWeights(focalTraits.size(), 0.0);
+      
+    
+    for (size_t trait = 0; trait < focalTraits.size(); trait++) {
+        if (focalTraits[trait] == 0) {
+            for (size_t demonstrator : usefulDemonstrators) {
+                const auto& demoTraits = repertoires[demonstrator][treeIndex];
+                if (demoTraits[trait] == 1) {
+                    auto delta = computeDelta(focalTraits, demoTraits);
+                    if (delta > 0) {
+                        traitWeights[trait] += std::pow(2.0, 1.0 - delta)/delta;
+                    }
+                }
+            }
+        }
+    }
+
+    if (debug >= 1) std::cout << "Trait weights:\n";
+    if (debug >= 1) printVector(traitWeights);
+
+    std::discrete_distribution<> distribution(traitWeights.begin(), traitWeights.end());
+    size_t sampledTrait = distribution(gen);
+    if (debug >= 1) std::cout << "Sampled trait: " << sampledTrait << '\n';
+    return sampledTrait;
+}
+
 bool Agents::isLearnable(size_t trait, size_t agentIndex, size_t treeIndex, const Tree& tree) {
     const std::vector<size_t>& focalTraits = repertoires[agentIndex][treeIndex];
 
@@ -283,7 +321,7 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
             repertoires[agentIndex][treeIndex][chosenTrait] = 1;
             feedback = payoffs[treeIndex][chosenTrait]; // payoffTotal;
         } else {
-            feedback = -1.0;
+            feedback = 0.0;
         }
         if (debug >= 1) std::cout << "Feedback: " << feedback << '\n';
         if (strategy == Payoff) {
@@ -301,9 +339,12 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
     if (lifetimes[agentIndex] == 0) {
         if(debug >= 1) std::cout << "Agent reset" << '\n';
         //reset the agent's repertoire
-        repertoires[agentIndex][treeIndex] = std::vector<size_t>(tree.size(), 0);
-        repertoires[agentIndex][treeIndex][0] = 1;
+        for (size_t i = 0; i < params.num_trees; ++i) {
+            repertoires[agentIndex][i] = std::vector<size_t>(params.num_traits, 0);
+            repertoires[agentIndex][i][0] = 1;
+        }
         lifetimes[agentIndex] = sampleLifetime(params, gen);
+        expectedValues[agentIndex] = strategyExpectedValues{1.0, 1.0};
     }
 }
 
@@ -313,7 +354,6 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
 
     auto agentIndex = sampleIndex(params.num_agents, gen);
     auto treeIndex = sampleIndex(params.num_trees, gen);
-    //auto treeIndex = sampleUnexploredTree(agentIndex, gen);
 
     if (debug >= 1) {
         if (trees[treeIndex][0][2] == 1) {
@@ -400,8 +440,8 @@ void Agents::printMeanEVs() {
     double meanPayoffEV = totalPayoffEV / numAgents;
     double meanProximalEV = totalProximalEV / numAgents;
 
-    std::cout << "Mean Expected Value for Payoff Strategy: " << meanPayoffEV << std::endl;
-    std::cout << "Mean Expected Value for Proximal Strategy: " << meanProximalEV << std::endl;
+    std::cout << "Mean Expected Value for Payoff Strategy: " << meanPayoffEV << '\n';
+    std::cout << "Mean Expected Value for Proximal Strategy: " << meanProximalEV << '\n';
 }
 
 

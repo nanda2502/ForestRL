@@ -16,11 +16,11 @@ struct Params {
     size_t num_agents = 1000;
     size_t num_trees = 100;
     size_t num_demonstrators = 10;
-    size_t num_traits = 16;
-    size_t num_iterations = 2e7;
-    double lifetime_scale = 1.0;
-    double learning_rate = 0.03;
-    double temperature = 0.02;
+    size_t num_traits = 8;
+    size_t num_iterations = 1e7;
+    double lifetime_scale = 10.0;
+    double learning_rate = 0.05;
+    double temperature = 0.05;
     double innovation_rate = 0.05;
 };
 

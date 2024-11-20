@@ -5,11 +5,6 @@ library(ggplot2)
 library(scales)
 
 
-data <- read.csv("output.csv")
-
-plot(data$PropConstrained, data$PropPayoff, xlab="Proportion of Constrained Trees", ylab="Proportion Payoff-based", type = "l", ylim = c(0,1))
-
-
 data <- read.csv("output.csv") %>%
   mutate(TimeBin = floor(Timestep / 20000) * 20000) %>%
   group_by(PropConstrained, TimeBin) %>%

@@ -17,6 +17,7 @@ Result runSimulation(const Params& params, double propConstrained, int showOutpu
         agents.learn(params, trees);
         if (i > 1e6 && showOutput == 1) debug = 1;
     }
+    std::cout << "Proportion of constrained trees: " << propConstrained << '\n';
     agents.printMeanEVs();
 
     result.timeSeriesData.reserve(agents.chosenStrategy.size());
@@ -42,7 +43,7 @@ int main(int argc, char* argv[]) {
     Params params;
     
     std::vector<double> propConstrainedValues;
-    for (double prop = 0.0; prop <= 0.0; prop += 0.25) {
+    for (double prop = 0.0; prop <= 1.0; prop += 0.25) {
         propConstrainedValues.push_back(prop);
     }
     
