@@ -13,19 +13,21 @@ public:
     double computeProportion();
     void printMeanEVs();
     std::vector<int> chosenStrategy; // chosenStrategy[timestep]
+    std::vector<int> ageAtTimestep;
     int sumNone = 0;
 
 private:
     Repertoires repertoires; // repertoires[agent][tree][trait]
     std::vector<strategyExpectedValues> expectedValues; // expectedValues[agent] 
     std::vector<size_t> lifetimes; // lifetimes[agent]
+    std::vector<size_t> ages; // ages[agent]
     std::vector<std::vector<double>> payoffs; // payoffs[tree][trait]
     double payoffTotal;
 
     void initialize(const Params& params, const std::vector<Tree>& trees);
     std::vector<size_t> getUnknownTraits(size_t agentIndex, size_t treeIndex);
     std::vector<size_t> getUsefulDemonstrators(size_t focalAgent, size_t treeIndex, const std::vector<size_t>& demonstrators);
-    std::vector<size_t> sampleDemoTraits(size_t focalAgent, size_t treeIndex, const std::vector<size_t>& demonstrators);
+    std::vector<size_t> sampleDemoTraits(size_t focalAgent, size_t treeIndex, const std::vector<size_t>& demonstrators, std::mt19937& gen);
     size_t learnPayoffBased(size_t treeIndex, const std::vector<size_t>& usefulTraits, std::mt19937& gen);
     size_t learnProximal(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen);
     size_t learnProximalMarkov(size_t focalAgent, const std::vector<size_t>& usefulDemonstrators, size_t treeIndex, std::mt19937& gen);

@@ -17,10 +17,10 @@ struct Params {
     size_t num_trees = 100;
     size_t num_demonstrators = 10;
     size_t num_traits = 8;
-    size_t num_iterations = 1e7;
+    size_t num_iterations = 5e6;
     double lifetime_scale = 10.0;
     double learning_rate = 0.05;
-    double temperature = 0.05;
+    double temperature = 0.01;
     double innovation_rate = 0.05;
 };
 
@@ -34,7 +34,8 @@ enum Strategy {
 struct TimeStepData {
     double propConstrained;
     size_t timestep;
-    int strategy;  
+    int strategy;
+    int age;  
 };
 
 struct Result {

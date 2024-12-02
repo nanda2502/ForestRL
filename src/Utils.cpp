@@ -14,14 +14,15 @@ size_t sampleIndex(const int& max, std::mt19937& gen) {
 void writeResultsToCsv(const std::vector<Result>& results, const std::string& filename) {
     std::ofstream outFile(filename);
     outFile << std::fixed << std::setprecision(3);
-    outFile << "PropConstrained,Timestep,Strategy\n";
+    outFile << "PropConstrained,Timestep,Strategy,Age\n";
     
     for (const auto& result : results) {
         
         for (const auto& timeStep : result.timeSeriesData) {
             outFile << timeStep.propConstrained << "," 
                     << timeStep.timestep << ","
-                    << timeStep.strategy << "\n";
+                    << timeStep.strategy << ","
+                    << timeStep.age << '\n';
         }
     }
 }

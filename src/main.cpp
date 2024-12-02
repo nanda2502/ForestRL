@@ -19,13 +19,14 @@ Result runSimulation(const Params& params, double propConstrained, int showOutpu
     }
     std::cout << "Proportion of constrained trees: " << propConstrained << '\n';
     agents.printMeanEVs();
-
+    
     result.timeSeriesData.reserve(agents.chosenStrategy.size());
     for (size_t i = 0; i < agents.chosenStrategy.size(); ++i) {
         TimeStepData timeStepData{
             propConstrained,
             i,  // Index in chosenStrategy is the timestep
-            agents.chosenStrategy[i]
+            agents.chosenStrategy[i],
+            agents.ageAtTimestep[i]
         };
         result.timeSeriesData.push_back(timeStepData);
     }
