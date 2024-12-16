@@ -9,15 +9,20 @@
 #include <random>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 extern int debug;
 
 Agents::Agents(const Params& params, const std::vector<Tree>& trees) {
     repertoires = Repertoires(params.num_agents, std::vector<std::vector<size_t>>(params.num_trees, std::vector<size_t>(params.num_traits, 0)));
-    expectedValues = std::vector<strategyExpectedValues>(params.num_agents, strategyExpectedValues{1.0, 1.0});
+    expectedValues = std::vector<StrategyExpectedValues>(params.num_agents, StrategyExpectedValues{1.0, 1.0});
+    treeExpectedValues = std::vector<std::vector<double>>(params.num_agents, std::vector<double>(params.num_trees, 1.0));
     lifetimes = std::vector<size_t>(params.num_agents);
     ages = std::vector<size_t>(params.num_agents, 0);
-    chosenStrategy = std::vector<int>();
+    chosenStrategy = std::vector<Strategy>();
+    chosenTree = std::vector<treeType>();
+    uniqueIndices = std::vector<size_t>(params.num_agents);
+    std::iota(uniqueIndices.begin(), uniqueIndices.end(), 0);
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -29,29 +34,16 @@ Agents::Agents(const Params& params, const std::vector<Tree>& trees) {
     initialize(params, trees);
 }
 
-/* std::vector<double> makeConstrainedDist(const Params& params) {
-    int inputnodes = params.num_traits - 2;
-    double startingValue = 1.112 - 0.217 * inputnodes + 0.016 * inputnodes * inputnodes;
-    constexpr double decay_rate = 0.5;
-    std::vector<double> dist(params.num_traits -1);
-    dist[0] = startingValue;
-    for (size_t i = 1; i < params.num_traits - 1; ++i) {
-        dist[i] = dist[i - 1] * decay_rate;
-    }
-    return dist;
-} */
-
-std::vector<double> makeConstrainedDist(const Params& params) {
-    return std::vector<double>(params.num_traits - 1, 0.8);
+auto makeConstrainedDist(const Params& params) {
+    return std::vector<double>(params.num_traits - 1, 0.6);
 }
 
-
-std::vector<double> makeFlatDist(const Params& params) {
+auto makeFlatDist(const Params& params) {
     return std::vector<double>(params.num_traits - 1, 1.0/(params.num_traits - 1));
 }
 
 size_t sampleLifetime(const Params& params, std::mt19937& gen) {
-    double mean =  params.lifetime_scale;
+    double mean =  params.lifetime_scale * params.num_traits;
 
     std::poisson_distribution<size_t> lifetimeDist(mean);
 
@@ -102,7 +94,7 @@ std::vector<size_t> Agents::getUnknownTraits(size_t agentIndex, size_t treeIndex
     return unknown_traits;
 }    
 
-Strategy sampleStrategy(const strategyExpectedValues& expectedValues, const Params& params, std::mt19937& gen) {
+Strategy sampleStrategy(const StrategyExpectedValues& expectedValues, const Params& params, std::mt19937& gen) {
     if (debug >= 1) std::cout << "Sampling strategy" << '\n';
     if (debug >= 1) std::cout << "Payoff: " << expectedValues.payoff << '\n';
     if (debug >= 1) std::cout << "Proximal: " << expectedValues.proximal << '\n';
@@ -335,7 +327,23 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
             expectedValues[agentIndex].proximal += params.learning_rate * predictionError;
             chosenStrategy.push_back(Proximal);
             ageAtTimestep.push_back(ages[agentIndex]);
-        } 
+        }
+        
+        if (params.update_trees) {
+            double predictionError = feedback - treeExpectedValues[agentIndex][treeIndex];
+            treeExpectedValues[agentIndex][treeIndex] += params.tree_learning_rate * predictionError;
+        }
+
+        receivedPayoffs.push_back(feedback);
+        
+        if (isConstrained(treeIndex)) {
+            chosenTree.push_back(Constrained);
+        } else {
+            chosenTree.push_back(Flat);
+        }
+        chosenAgent.push_back(uniqueIndices[agentIndex]);
+        chosenTreeIndex.push_back(treeIndex);
+
     }
 
     lifetimes[agentIndex] -= 1;
@@ -349,8 +357,33 @@ void Agents::update(size_t chosenTrait, size_t agentIndex, size_t treeIndex, Str
         }
         lifetimes[agentIndex] = sampleLifetime(params, gen);
         ages[agentIndex] = 0;
-        expectedValues[agentIndex] = strategyExpectedValues{1.0, 1.0};
+        expectedValues[agentIndex] = StrategyExpectedValues{1.0, 1.0};
+        treeExpectedValues[agentIndex] = std::vector<double>(params.num_trees, 1.0);
+        uniqueIndices[agentIndex] += params.num_agents;
     }
+}
+
+size_t Agents::sampleTreeFromEV(size_t agentIndex, const Params& params, std::mt19937& gen) {
+    if (debug >= 1) std::cout << "Sampling tree" << '\n';
+
+    // softmax the tree expected values
+    std::vector<double> scaledTreeExpectedValues(params.num_trees);
+    double total = 0.0;
+    for (size_t i = 0; i < params.num_trees; i++) {
+        scaledTreeExpectedValues[i] = treeExpectedValues[agentIndex][i] / params.tree_temperature;
+        total += exp(scaledTreeExpectedValues[i]);
+    }
+
+    std::vector<double> treeProbs(params.num_trees);
+    std::transform(scaledTreeExpectedValues.begin(), scaledTreeExpectedValues.end(), treeProbs.begin(),
+        [total](double scaledEV) {
+            return exp(scaledEV) / total;
+        });
+
+    
+    std::discrete_distribution<> treeDist(treeProbs.begin(), treeProbs.end());
+
+    return treeDist(gen);
 }
 
 void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
@@ -358,7 +391,7 @@ void Agents::learn(const Params& params, const std::vector<Tree>& trees) {
     std::mt19937 gen(rd());
 
     auto agentIndex = sampleIndex(params.num_agents, gen);
-    auto treeIndex = sampleIndex(params.num_trees, gen);
+    auto treeIndex = sampleTreeFromEV(agentIndex, params, gen);
 
     if (debug >= 1) {
         if (trees[treeIndex][0][2] == 1) {
@@ -431,7 +464,7 @@ double Agents::computeProportion() {
     return sum / numElements;
 }
 
-void Agents::printMeanEVs() {
+void Agents::printMeanStratEVs() {
     size_t numAgents = expectedValues.size();
 
     double totalPayoffEV = 0.0;
@@ -448,7 +481,6 @@ void Agents::printMeanEVs() {
     std::cout << "Mean Expected Value for Payoff Strategy: " << meanPayoffEV << '\n';
     std::cout << "Mean Expected Value for Proximal Strategy: " << meanProximalEV << '\n';
 }
-
 
 size_t Agents::sampleUnexploredTree(size_t agentIndex, std::mt19937& gen) {
     const auto& agentRepertoire = repertoires[agentIndex];
@@ -475,4 +507,46 @@ size_t Agents::sampleUnexploredTree(size_t agentIndex, std::mt19937& gen) {
     // Sample randomly from the trees with the smallest number of traits
     std::uniform_int_distribution<size_t> treeDist(0, smallestTraitTrees.size() - 1);
     return smallestTraitTrees[treeDist(gen)];
+}
+
+bool Agents::isConstrained(size_t treeIndex) {
+    return treeIndex < 50;
+}
+
+std::vector<std::vector<double>> Agents::calculateAverages(const Params& params) {
+
+    std::vector<std::vector<double>> averages(params.num_trees, std::vector<double>(params.num_traits, 0.0));
+
+    // Calculate the sum across all agents for each tree and trait
+    for (size_t agent = 0; agent < params.num_agents; ++agent) {
+        for (size_t tree = 0; tree < params.num_trees; ++tree) {
+            for (size_t trait = 0; trait < params.num_traits; ++trait) {
+                averages[tree][trait] += repertoires[agent][tree][trait];
+            }
+        }
+    }
+
+    // Calculate the average by dividing by the number of agents
+    for (size_t tree = 0; tree < params.num_trees; ++tree) {
+        for (size_t trait = 0; trait < params.num_traits; ++trait) {
+            averages[tree][trait] /= params.num_agents;
+        }
+    }
+
+    return averages;
+}
+
+
+void Agents::writeAveragesToCSV(const std::string& filename, const Params& params) {
+    auto averages = calculateAverages(params);
+    std::ofstream csvFile(filename);
+
+    csvFile << "Tree,Trait,Average" << '\n';
+    for (size_t tree = 0; tree < averages.size(); ++tree) {
+        for (size_t trait = 0; trait < averages[tree].size(); ++trait) {
+            csvFile << tree << "," << trait << "," << averages[tree][trait] << '\n';
+        }
+    }
+
+    csvFile.close();
 }

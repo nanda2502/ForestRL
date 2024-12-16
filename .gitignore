@@ -1,3 +1,4 @@
 .clangd
 build/
-output.csv
+*.csv
+*.gz

@@ -50,16 +50,33 @@ std::pair<std::vector<std::vector<double>>, double> generatePayoffs(const Params
         total += non_root_payoffs[i];
     }
 
-    // Generate params.num_trees random shuffles of these payoffs
+    std::vector<double> constrainedPayoffs(non_root_count);
+
+    std::transform(non_root_payoffs.begin(), non_root_payoffs.end(), constrainedPayoffs.begin(), [&params](double payoff) {
+        return payoff * params.constrained_payoff_scale;
+    });
+
+    // Payoffs for constrained trees
     std::vector<std::vector<double>> payoffs(params.num_trees, std::vector<double>(params.num_traits));
-    for (size_t tree = 0; tree < params.num_trees; ++tree) {
+
+    for (size_t tree = 0; tree < (params.num_trees/2)+1; ++tree) {
+        
+        auto shuffledConstrainedPayoffs = constrainedPayoffs;
+        std::shuffle(shuffledConstrainedPayoffs.begin(), shuffledConstrainedPayoffs.end(), gen);
+        payoffs[tree][0] = 0.0;
+        for (size_t i = 0; i < non_root_count; ++i) {
+            payoffs[tree][i + 1] = shuffledConstrainedPayoffs[i];
+        }
+    }
+
+    // Shuffle payoffs for flat trees
+    for (size_t tree = (params.num_trees/2)+1; tree < params.num_trees; ++tree) {
         std::vector<double> shuffled_payoffs = non_root_payoffs;
         std::shuffle(shuffled_payoffs.begin(), shuffled_payoffs.end(), gen);
         payoffs[tree][0] = 0.0;
         for (size_t i = 0; i < non_root_count; ++i) {
             payoffs[tree][i + 1] = shuffled_payoffs[i];
         }
-
     }
     return {payoffs, total};
 }

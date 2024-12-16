@@ -16,9 +16,16 @@ Result runSimulation(const Params& params, double propConstrained, int showOutpu
     for (size_t i = 0; i < params.num_iterations; ++i) {
         agents.learn(params, trees);
         if (i > 1e6 && showOutput == 1) debug = 1;
+        if (i == 0) {
+            agents.writeAveragesToCSV("repertoires_0.csv", params);
+        }
+        if (i == 2e6) {
+            agents.writeAveragesToCSV("repertoires.csv", params);
+        }
     }
     std::cout << "Proportion of constrained trees: " << propConstrained << '\n';
-    agents.printMeanEVs();
+    agents.printMeanStratEVs();
+
     
     result.timeSeriesData.reserve(agents.chosenStrategy.size());
     for (size_t i = 0; i < agents.chosenStrategy.size(); ++i) {
@@ -26,7 +33,11 @@ Result runSimulation(const Params& params, double propConstrained, int showOutpu
             propConstrained,
             i,  // Index in chosenStrategy is the timestep
             agents.chosenStrategy[i],
-            agents.ageAtTimestep[i]
+            agents.ageAtTimestep[i],
+            agents.chosenTree[i],
+            agents.chosenAgent[i],
+            agents.chosenTreeIndex[i],
+            agents.receivedPayoffs[i]
         };
         result.timeSeriesData.push_back(timeStepData);
     }
@@ -35,17 +46,15 @@ Result runSimulation(const Params& params, double propConstrained, int showOutpu
 }
 
 int main(int argc, char* argv[]) {
-    // optionally, accept input for showOutput
     int showOutput = 0;
-    if (argc > 1) {
-        showOutput = std::stoi(argv[1]);
-    }
 
-    Params params;
+    Params params = parseArgs(argc, argv);
     
     std::vector<double> propConstrainedValues;
-    for (double prop = 0.0; prop <= 1.0; prop += 0.25) {
-        propConstrainedValues.push_back(prop);
+    for (double prop = params.start_prop;
+         prop <= params.end_prop;
+         prop += params.prop_step) {
+    propConstrainedValues.push_back(prop);
     }
     
     std::vector<Result> results(propConstrainedValues.size());
@@ -56,7 +65,14 @@ int main(int argc, char* argv[]) {
         results[i] = runSimulation(params, prop, showOutput);
     }
 
-    writeResultsToCsv(results, "../output.csv");
+    std::string filename;
+    if (params.update_trees) {
+        filename = "./output_variable.csv";
+    } else {
+        filename = "./output_fixed.csv";
+    }
+
+    writeResultsToCsv(results, filename);
     std::cout << "Simulation complete" << '\n';
     return 0;
 }

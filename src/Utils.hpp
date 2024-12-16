@@ -17,4 +17,6 @@ void printVector(const std::vector<T>& v) {
     std::cout << '\n';
 }
 
+Params parseArgs(int argc, char* argv[]);
+
 #endif // UTILS_HPP
